@@ -18,6 +18,7 @@ const Dashboard = () => {
                     <Suspense fallback={<ComponentLoader/>}><RecentPersonalTransactions/></Suspense>
                 </Col>
             </Row>
+
         </>
     );
 };
