@@ -60,13 +60,9 @@ const CollapseItems = ({route}: CollapseItemsType) => {
     );
 };
 
-type NavbarVerticalMenuType = {
-    routes: RouteChildType[]
-};
-
-const NavbarVerticalMenu = ({routes}: NavbarVerticalMenuType) => {
-    const dispatch = useAppDispatch()
-    const {showBurgerMenu} = useAppSelector((state) =>state.theme);
+const NavbarVerticalMenu = ({routes}: { routes: RouteChildType[] }) => {
+    const dispatch = useAppDispatch();
+    const {showBurgerMenu} = useAppSelector((state) => state.theme);
 
     const handleNavItemClick = () => {
         if (showBurgerMenu) dispatch(setTheme({key: 'showBurgerMenu', value: !showBurgerMenu}));
@@ -74,27 +70,21 @@ const NavbarVerticalMenu = ({routes}: NavbarVerticalMenuType) => {
 
     return (
         <>
-            {
-                routes.map(route => {
-                    if (!route.children) {
-                        return (
-                            <Nav.Item as="li" key={route.name} onClick={handleNavItemClick}>
-                                <NavLink
-                                    end={route.exact}
-                                    to={String(route.to)}
-                                    state={{open: route.to === '/authentication-modal'}}
-                                    className={({isActive}) =>
-                                        isActive ? 'active nav-link' : 'nav-link'
-                                    }
-                                >
-                                    <NavbarVerticalMenuItem route={route}/>
-                                </NavLink>
-                            </Nav.Item>
-                        );
-                    }
-                    return <CollapseItems route={route} key={route.name}/>;
-                })
-            }
+            {routes.map(route => {
+                if (!route.children) {
+                    return (
+                        <Nav.Item as="li" key={route.name} onClick={handleNavItemClick}>
+                            <NavLink end={route.exact} to={String(route.to)}
+                                     state={{open: route.to === '/authentication-modal'}}
+                                     className={({isActive}) => isActive ? 'active nav-link' : 'nav-link'}>
+                                <NavbarVerticalMenuItem route={route}/>
+                            </NavLink>
+                        </Nav.Item>
+                    );
+                }
+
+                return <CollapseItems route={route} key={route.name}/>;
+            })}
         </>
     );
 };

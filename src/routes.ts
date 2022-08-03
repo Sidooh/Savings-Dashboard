@@ -35,7 +35,8 @@ const routes: RouteType[] = [
                 name: 'Accounts',
                 icon: faUsersLine,
                 to: '/personal-accounts',
-                active: true
+                active: true,
+                exact: true,
             },
             {
                 name: 'Transactions',
@@ -64,19 +65,22 @@ const routes: RouteType[] = [
                 name: 'Groups',
                 icon: faPeopleLine,
                 to: '/groups',
-                active: true
+                active: true,
+                exact: true,
             },
             {
                 name: 'Accounts',
                 icon: faUsersLine,
                 to: '/group-accounts',
-                active: true
+                active: true,
+                exact: true,
             },
             {
                 name: 'Transactions',
                 icon: faGlobe,
                 to: '/group-accounts/transactions',
-                active: true
+                active: true,
+                exact: true,
             },
             {
                 name: 'Collective Investments',
