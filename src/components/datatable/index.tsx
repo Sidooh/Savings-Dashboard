@@ -150,7 +150,7 @@ const DataTable = ({title, data, columns, onCreateRow, viewAllLink = ''}: DataTa
                 {table.getRowModel().rows.map(row => (
                     <tr key={row.id}>
                         {row.getVisibleCells().map(cell => (
-                            <td key={cell.id} className={'py-2'}>
+                            <td key={cell.id} className={'py-1'}>
                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
                             </td>
                         ))}
