@@ -14,6 +14,9 @@ const Analytics = lazy(() => import('pages/dashboards/analytics'));
 const PersonalAccounts = lazy(() => import('pages/personal-accounts'));
 const PersonalAccountTransactions = lazy(() => import('pages/personal-accounts/Transactions'));
 
+const GroupAccounts = lazy(() => import('pages/group-accounts'));
+const GroupAccountTransactions = lazy(() => import('pages/group-accounts/Transactions'));
+
 const Layout = () => {
     const HTMLClassList = document.getElementsByTagName('html')[0].classList;
 
@@ -37,6 +40,9 @@ const Layout = () => {
 
                     <Route path={'/personal-accounts'} element={<PersonalAccounts/>}/>
                     <Route path={'/personal-accounts/transactions'} element={<PersonalAccountTransactions/>}/>
+
+                    <Route path={'/group-accounts'} element={<GroupAccounts/>}/>
+                    <Route path={'/group-accounts/transactions'} element={<GroupAccountTransactions/>}/>
 
                     <Route path={'*'} element={<Dashboard/>}/>
                 </Route>

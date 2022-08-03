@@ -69,13 +69,13 @@ const routes: RouteType[] = [
             {
                 name: 'Accounts',
                 icon: faUsersLine,
-                to: '/subscriptions',
+                to: '/group-accounts',
                 active: true
             },
             {
                 name: 'Transactions',
                 icon: faGlobe,
-                to: '/subscriptions',
+                to: '/group-accounts/transactions',
                 active: true
             },
             {
