@@ -1,6 +1,5 @@
-import { Col, Form, Row } from 'react-bootstrap';
-import { Button, Checkbox, IconButton, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Checkbox, IconButton, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
 import { Dispatch, SetStateAction, useState } from 'react';
 import pluralize from 'pluralize';
 import { Str } from 'utils/helpers';
@@ -46,16 +45,14 @@ const Header = ({table, rowSelection, filtering, setFiltering, title, onCreateRo
                             <option value="refund">Refund</option>
                             <option value="delete">Delete</option>
                         </Form.Select>
-                        <Button type="button" variant="contained" size="small" className="ms-2"
-                                onClick={() => executeBulkAction()}>
+                        <Button variant="primary" size="sm" className="ms-2" onClick={() => executeBulkAction()}>
                             Apply
                         </Button>
                     </Flex>
                 ) : (
                     <Flex>
                         {onCreateRow && (
-                            <Button size="small" startIcon={<Add/>} className="me-2"
-                                    onClick={onCreateRow} variant={'contained'}>
+                            <Button size="sm" className="me-2" onClick={onCreateRow} variant={'success'}>
                                 <span className="d-none d-sm-inline-block ms-1">New</span>
                             </Button>
                         )}

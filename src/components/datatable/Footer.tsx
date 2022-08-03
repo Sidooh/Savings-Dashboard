@@ -1,10 +1,17 @@
 import Flex from 'components/Flex';
 import { Form } from 'react-bootstrap';
 import { Button, IconButton } from '@mui/material';
-import { ArrowRightAltRounded, NavigateBefore, NavigateNext, SkipNext, SkipPrevious } from '@mui/icons-material';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Table } from '@tanstack/react-table';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faAnglesLeft,
+    faAnglesRight,
+    faArrowLeft,
+    faArrowRight,
+    faArrowRightLong
+} from '@fortawesome/free-solid-svg-icons';
 
 const Footer = ({table, rowSelection, viewAllLink}: { table: Table<any>, rowSelection: {}, viewAllLink: string }) => {
     const navigate = useNavigate();
@@ -39,21 +46,21 @@ const Footer = ({table, rowSelection, viewAllLink}: { table: Table<any>, rowSele
                     viewAllLink &&
                     <Button size="small" onClick={() => navigate(viewAllLink)}>
                         <span className="d-none d-sm-inline-block ms-1">View All</span>
-                        <ArrowRightAltRounded/>
+                        <FontAwesomeIcon icon={faArrowRightLong} fontSize={15}/>
                     </Button>
                 }
                 <IconButton disabled={!table.getCanPreviousPage()} onClick={() => table.setPageIndex(0)}>
-                    <SkipPrevious/>
+                    <FontAwesomeIcon icon={faAnglesLeft} fontSize={15}/>
                 </IconButton>
                 <IconButton disabled={!table.getCanPreviousPage()} onClick={() => table.previousPage()}>
-                    <NavigateBefore/>
+                    <FontAwesomeIcon icon={faArrowLeft} fontSize={15}/>
                 </IconButton>
                 <IconButton disabled={!table.getCanNextPage()} onClick={() => table.nextPage()}>
-                    <NavigateNext/>
+                    <FontAwesomeIcon icon={faArrowRight} fontSize={15}/>
                 </IconButton>
                 <IconButton disabled={!table.getCanNextPage()}
                             onClick={() => table.setPageIndex(table.getPageCount() - 1)}>
-                    <SkipNext/>
+                    <FontAwesomeIcon icon={faAnglesRight} fontSize={15}/>
                 </IconButton>
             </Flex>
         </Flex>
