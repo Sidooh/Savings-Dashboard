@@ -11,7 +11,7 @@ const RecentPersonalTransactions = () => {
 
     console.log(transactions);
 
-    return <SavingsTransactionTable title={'Recent Personal Account Transactions'} transactions={transactions}/>;
+    return <SavingsTransactionTable title={'Recent Personal Transactions'} transactions={transactions}/>;
 };
 
 export default RecentPersonalTransactions;

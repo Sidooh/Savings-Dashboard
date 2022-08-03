@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { CONFIG } from 'config';
-import { PersonalAccountTransaction } from '../../utils/types';
+import { CollectiveInvestment, PersonalAccountTransaction } from '../../utils/types';
 
 type DashboardSummariesData = {
     amount_group_accounts: number
@@ -16,7 +16,13 @@ type DashboardSummariesData = {
 export const savingsApi = createApi({
     reducerPath: 'savingsApi',
     keepUnusedDataFor: 60 * 5, // 5 minutes
-    tagTypes: ['Group', 'GroupCollectiveInvestment', 'GroupSubInvestment', 'RecentPersonalAccountTransaction'],
+    tagTypes: [
+        'Group',
+        'GroupCollectiveInvestment',
+        'GroupSubInvestment',
+        'RecentPersonalAccountTransaction',
+        'RecentPersonalCollectiveInvestment'
+    ],
     baseQuery: fetchBaseQuery({
         baseUrl: `${CONFIG.sidooh.services.savings.api.url}/dashboard`,
         prepareHeaders: (headers) => {
@@ -39,7 +45,12 @@ export const savingsApi = createApi({
             transformResponse: (response: { data: PersonalAccountTransaction[] }) => response.data,
             providesTags: ['RecentPersonalAccountTransaction']
         }),
+        getRecentPersonalCollectiveInvestment: builder.query<CollectiveInvestment[], void>({
+            query: () => '/recent-collective-investments',
+            transformResponse: (response: { data: CollectiveInvestment[] }) => response.data,
+            providesTags: ['RecentPersonalCollectiveInvestment']
+        }),
     })
 });
 
-export const {useGetDashboardSummariesQuery, useGetRecentPersonalAccountTransactionQuery} = savingsApi;
+export const {useGetDashboardSummariesQuery, useGetRecentPersonalAccountTransactionQuery, useGetRecentPersonalCollectiveInvestmentQuery} = savingsApi;

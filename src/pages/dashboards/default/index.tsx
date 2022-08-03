@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import Summaries from './Summaries';
 import RecentPersonalTransactions from './RecentPersonalTransactions';
 import { Col, Row } from 'react-bootstrap';
+import RecentPersonalCollectiveInvestments from './RecentPersonalCollectiveInvestments';
 
 const Dashboard = () => {
     return (
@@ -19,6 +20,11 @@ const Dashboard = () => {
                 </Col>
             </Row>
 
+            <Row>
+                <Col>
+                    <Suspense fallback={<ComponentLoader/>}><RecentPersonalCollectiveInvestments/></Suspense>
+                </Col>
+            </Row>
         </>
     );
 };
