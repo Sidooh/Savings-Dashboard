@@ -17,6 +17,10 @@ const Transactions = ({title, transactions}: { title: string, transactions: Pers
                         cell: ({row}: any) => <SidoohAccount account={row.original.account}/>
                     },
                     {
+                        accessorKey: 'type',
+                        header: 'Type',
+                    },
+                    {
                         accessorKey: 'amount',
                         header: 'Amount',
                         cell: ({row}: any) => currencyFormat(row.original.amount)
