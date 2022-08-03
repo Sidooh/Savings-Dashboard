@@ -13,6 +13,12 @@ const Analytics = lazy(() => import('pages/dashboards/analytics'));
 
 const PersonalAccounts = lazy(() => import('pages/personal-accounts'));
 const PersonalAccountTransactions = lazy(() => import('pages/personal-accounts/Transactions'));
+const PersonalCollectiveInvestments = lazy(() => import('pages/personal-accounts/CollectiveInvestments'));
+const PersonalSubInvestments = lazy(() => import('pages/personal-accounts/SubInvestments'));
+
+const Groups = lazy(() => import('pages/groups'));
+const GroupCollectiveInvestments = lazy(() => import('pages/groups/CollectiveInvestments'));
+const GroupSubInvestments = lazy(() => import('pages/groups/SubInvestments'));
 
 const GroupAccounts = lazy(() => import('pages/group-accounts'));
 const GroupAccountTransactions = lazy(() => import('pages/group-accounts/Transactions'));
@@ -40,9 +46,15 @@ const Layout = () => {
 
                     <Route path={'/personal-accounts'} element={<PersonalAccounts/>}/>
                     <Route path={'/personal-accounts/transactions'} element={<PersonalAccountTransactions/>}/>
+                    <Route path={'/personal-accounts/collective-investments'} element={<PersonalCollectiveInvestments/>}/>
+                    <Route path={'/personal-accounts/sub-investments'} element={<PersonalSubInvestments/>}/>
 
                     <Route path={'/group-accounts'} element={<GroupAccounts/>}/>
                     <Route path={'/group-accounts/transactions'} element={<GroupAccountTransactions/>}/>
+
+                    <Route path={'/groups'} element={<Groups/>}/>
+                    <Route path={'/groups/collective-investments'} element={<GroupCollectiveInvestments/>}/>
+                    <Route path={'/groups/sub-investments'} element={<GroupSubInvestments/>}/>
 
                     <Route path={'*'} element={<Dashboard/>}/>
                 </Route>

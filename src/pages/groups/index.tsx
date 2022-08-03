@@ -1,28 +1,26 @@
-import { useGetPersonalAccountsQuery } from 'features/personal-accounts/personalAccountApi';
 import { SectionError } from 'components/Error';
 import { SectionLoader } from 'components/Loader';
 import { Card } from 'react-bootstrap';
 import DataTable from 'components/datatable';
-import { currencyFormat } from '../../utils/helpers';
-import StatusChip from '../../components/chips/StatusChip';
-import SidoohAccount from 'components/SidoohAccount';
+import { currencyFormat } from 'utils/helpers';
+import StatusChip from 'components/chips/StatusChip';
+import { useGetGroupsQuery } from 'features/groups/groupsApi';
 
 const Index = () => {
-    let {data: accounts, isLoading, isSuccess, isError, error} = useGetPersonalAccountsQuery();
+    let {data: groups, isLoading, isSuccess, isError, error} = useGetGroupsQuery();
 
     if (isError) return <SectionError error={error}/>;
-    if (isLoading || !isSuccess || !accounts) return <SectionLoader/>;
+    if (isLoading || !isSuccess || !groups) return <SectionLoader/>;
 
-    console.log(accounts);
+    console.log(groups);
 
     return (
         <Card className={'mb-3'}>
             <Card.Body>
-                <DataTable title={'Personal Accounts'} data={accounts} columns={[
+                <DataTable title={'Personal Accounts'} data={groups} columns={[
                     {
-                        accessorKey: 'customer',
-                        header: 'Customer',
-                        cell: ({row}: any) => <SidoohAccount account={row.original.account}/>
+                        accessorKey: 'name',
+                        header: 'Name',
                     },
                     {
                         accessorKey: 'target_amount',

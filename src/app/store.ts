@@ -3,6 +3,7 @@ import authReducer from 'features/auth/authSlice';
 import themeReducer from 'features/theme/themeSlice';
 import { personalAccountApi } from 'features/personal-accounts/personalAccountApi';
 import { groupAccountApi } from 'features/group-accounts/groupAccountApi';
+import { groupsApi } from '../features/groups/groupsApi';
 
 export const store = configureStore({
     reducer: {
@@ -11,9 +12,10 @@ export const store = configureStore({
 
         [personalAccountApi.reducerPath]: personalAccountApi.reducer,
         [groupAccountApi.reducerPath]: groupAccountApi.reducer,
+        [groupsApi.reducerPath]: groupsApi.reducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-        .concat(personalAccountApi.middleware, groupAccountApi.middleware)
+        .concat(personalAccountApi.middleware, groupAccountApi.middleware, groupsApi.middleware)
 });
 
 export type AppDispatch = typeof store.dispatch;

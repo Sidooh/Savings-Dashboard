@@ -76,7 +76,7 @@ export const toast = async (data: SweetAlertOptions) => {
         toast: data.toast ?? true,
         title: data.title,
         showConfirmButton: data.showConfirmButton ?? false,
-    }
+    };
 
     await Sweet.fire(options);
 };
@@ -100,7 +100,8 @@ export const Str = {
 
 export const currencyFormat = (number?: number, currency = 'KES') => number && (new Intl.NumberFormat('en-GB', {
     style: 'currency',
-    currency
+    currency,
+    maximumFractionDigits: 4
 })).format(number);
 
 export const parsePhone = (phone?: string | number) => phone && parsePhoneNumber(String(phone), 'KE').number;

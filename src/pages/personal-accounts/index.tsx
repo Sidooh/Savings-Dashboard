@@ -3,8 +3,8 @@ import { SectionError } from 'components/Error';
 import { SectionLoader } from 'components/Loader';
 import { Card } from 'react-bootstrap';
 import DataTable from 'components/datatable';
-import { currencyFormat } from '../../utils/helpers';
-import StatusChip from '../../components/chips/StatusChip';
+import { currencyFormat } from 'utils/helpers';
+import StatusChip from 'components/chips/StatusChip';
 import SidoohAccount from 'components/SidoohAccount';
 
 const Index = () => {

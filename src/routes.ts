@@ -46,13 +46,13 @@ const routes: RouteType[] = [
             {
                 name: 'Collective Investments',
                 icon: faHandHoldingDollar,
-                to: '/earnings/cashbacks',
+                to: '/personal-accounts/collective-investments',
                 active: true
             },
             {
                 name: 'Sub Investments',
                 icon: faCoins,
-                to: '/earnings/cashbacks',
+                to: '/personal-accounts/sub-investments',
                 active: true
             },
         ]
@@ -63,7 +63,7 @@ const routes: RouteType[] = [
             {
                 name: 'Groups',
                 icon: faPeopleLine,
-                to: '/subscriptions-types',
+                to: '/groups',
                 active: true
             },
             {
@@ -81,13 +81,13 @@ const routes: RouteType[] = [
             {
                 name: 'Collective Investments',
                 icon: faHandHoldingDollar,
-                to: '/earnings/cashbacks',
+                to: '/groups/collective-investments',
                 active: true
             },
             {
                 name: 'Sub Investments',
                 icon: faCoins,
-                to: '/earnings/cashbacks',
+                to: '/groups/sub-investments',
                 active: true
             },
         ]

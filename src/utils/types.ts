@@ -85,3 +85,16 @@ export type GroupAccount = Model & {
 export type GroupAccountTransaction = Transaction & {
     group_account?: GroupAccount
 }
+
+export type CollectiveInvestment = Model & {
+    amount: number
+    invested_at: string
+    investment_date: string
+}
+
+export type SubInvestment = Model & {
+    amount: number
+    interest: string
+    personal_account: PersonalAccount
+    group: Group
+}
