@@ -4,6 +4,7 @@ import themeReducer from 'features/theme/themeSlice';
 import { personalAccountApi } from 'features/personal-accounts/personalAccountApi';
 import { groupAccountApi } from 'features/group-accounts/groupAccountApi';
 import { groupsApi } from '../features/groups/groupsApi';
+import { savingsApi } from '../features/savings/savingsApi';
 
 export const store = configureStore({
     reducer: {
@@ -13,9 +14,10 @@ export const store = configureStore({
         [personalAccountApi.reducerPath]: personalAccountApi.reducer,
         [groupAccountApi.reducerPath]: groupAccountApi.reducer,
         [groupsApi.reducerPath]: groupsApi.reducer,
+        [savingsApi.reducerPath]: savingsApi.reducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-        .concat(personalAccountApi.middleware, groupAccountApi.middleware, groupsApi.middleware)
+        .concat(personalAccountApi.middleware, groupAccountApi.middleware, savingsApi.middleware)
 });
 
 export type AppDispatch = typeof store.dispatch;

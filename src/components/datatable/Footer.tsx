@@ -38,6 +38,8 @@ const Footer = ({table, rowSelection, viewAllLink}: { table: Table<any>, rowSele
                         {table.getPreFilteredRowModel().rows.length} Total Rows Selected
                     </div>
                 )}
+
+                <span>Total: {table.getRowModel().rows.length}</span>
             </Flex>
             <Flex>
                 {

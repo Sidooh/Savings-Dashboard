@@ -14,7 +14,7 @@ type SoftBadgeType = {
 
 const SoftBadge = ({bg = 'primary', pill, children, icon, soft = false, className, style, onClick}: SoftBadgeType) => {
     return (
-        <span className={classNames(className, `badge badge-${soft ? 'soft' : ''}-${bg}`, {'rounded-pill': pill})}
+        <span className={classNames(className, `badge ${soft ? 'badge-soft' : 'bg'}-${bg}`, {'rounded-pill': pill})}
               style={style}
               onClick={onClick}>
             {icon} {children}

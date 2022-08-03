@@ -1,7 +1,9 @@
+import Summaries from './Summaries';
+
 const Dashboard = () => {
     return (
         <>
-            Hello
+            <Summaries/>
         </>
     );
 };
