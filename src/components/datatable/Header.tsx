@@ -63,7 +63,7 @@ const Header = ({table, rowSelection, filtering, setFiltering, title, onCreateRo
                             <IconButton aria-controls={Boolean(anchorEl) ? 'demo-positioned-menu' : undefined}
                                     aria-haspopup="true" aria-expanded={Boolean(anchorEl) ? 'true' : undefined}
                                     onClick={e => setAnchorEl(e.currentTarget)}>
-                                <FontAwesomeIcon icon={faTableColumns}/>
+                                <FontAwesomeIcon icon={faTableColumns} size={'sm'}/>
                             </IconButton>
                         </Tooltip>
                         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(undefined)}
