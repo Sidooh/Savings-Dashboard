@@ -9,15 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Chip } from '@mui/material';
 import Flex from 'components/Flex';
 
-type CollapseItemsType = {
-    route: RouteChildType
-};
-
-type NavbarVerticalMenuItemType = {
-    route: RouteChildType
-};
-
-const NavbarVerticalMenuItem = ({route}: NavbarVerticalMenuItemType) => (
+const NavbarVerticalMenuItem = ({route}: { route: RouteChildType }) => (
     <Flex alignItems="center">
         {route.icon && <span className="nav-link-icon"><FontAwesomeIcon icon={route.icon}/></span>}
         <span className="nav-link-text ps-1">{route.name}</span>
@@ -25,21 +17,22 @@ const NavbarVerticalMenuItem = ({route}: NavbarVerticalMenuItemType) => (
     </Flex>
 );
 
-const CollapseItems = ({route}: CollapseItemsType) => {
+const CollapseItems = ({route}: { route: RouteChildType }) => {
     const {pathname} = useLocation();
 
-    const openCollapse = (childrens: RouteChildType[] | undefined) => {
-        if (!childrens) return;
-        const checkLink = (children: RouteChildType) => {
-            if (children.to === pathname) return true;
+    const openCollapse = (children: RouteChildType[] | undefined) => {
+        if (!children) return;
+
+        const checkLink = (child: RouteChildType) => {
+            if (child.to === pathname) return true;
 
             return (
-                Object.prototype.hasOwnProperty.call(children, 'children') &&
-                children.children?.some(checkLink)
+                Object.prototype.hasOwnProperty.call(child, 'children') &&
+                child.children?.some(checkLink)
             );
         };
 
-        return childrens.some(checkLink);
+        return children.some(checkLink);
     };
 
     const [open, setOpen] = useState(openCollapse(route.children));

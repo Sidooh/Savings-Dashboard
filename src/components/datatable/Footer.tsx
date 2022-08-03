@@ -32,14 +32,12 @@ const Footer = ({table, rowSelection, viewAllLink}: { table: Table<any>, rowSele
                         <option key={pageSize} value={pageSize}>Show {pageSize}</option>
                     ))}
                 </Form.Select>
-                {
-                    Boolean(selectedRowsCount) && (
-                        <div>
-                            {selectedRowsCount} of{' '}
-                            {table.getPreFilteredRowModel().rows.length} Total Rows Selected
-                        </div>
-                    )
-                }
+                {Boolean(selectedRowsCount) && (
+                    <div>
+                        {selectedRowsCount} of{' '}
+                        {table.getPreFilteredRowModel().rows.length} Total Rows Selected
+                    </div>
+                )}
             </Flex>
             <Flex>
                 {
