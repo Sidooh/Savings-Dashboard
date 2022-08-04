@@ -12,6 +12,20 @@ type DashboardSummariesData = {
     count_personal_accounts: number
     count_personal_accounts_today: number
 }
+type ChartData = {
+    labels: string[],
+    datasets: number[]
+}
+
+type RevenueDayData = {
+    group: ChartData;
+    personal: ChartData;
+}
+
+type DashboardChart = {
+    today: RevenueDayData
+    yesterday: RevenueDayData
+}
 
 export const savingsApi = createApi({
     reducerPath: 'savingsApi',
@@ -35,6 +49,11 @@ export const savingsApi = createApi({
     }),
     endpoints: builder => ({
         //  Earning Endpoints
+        getDashboardChartData: builder.query<DashboardChart, void>({
+            query: () => '/chart',
+            transformResponse: (response: { data: DashboardChart }) => response.data,
+            providesTags: ['Group']
+        }),
         getDashboardSummaries: builder.query<DashboardSummariesData, void>({
             query: () => '/summaries',
             transformResponse: (response: { data: DashboardSummariesData }) => response.data,
@@ -53,4 +72,9 @@ export const savingsApi = createApi({
     })
 });
 
-export const {useGetDashboardSummariesQuery, useGetRecentPersonalAccountTransactionQuery, useGetRecentPersonalCollectiveInvestmentQuery} = savingsApi;
+export const {
+    useGetDashboardChartDataQuery,
+    useGetDashboardSummariesQuery,
+    useGetRecentPersonalAccountTransactionQuery,
+    useGetRecentPersonalCollectiveInvestmentQuery
+} = savingsApi;
