@@ -30,47 +30,71 @@ export interface ApiResponse<T> {
     errors: object[];
 }
 
-export type User = {
+export type Model = {
     id: number
+    created_at: string
+    updated_at: string
+}
+
+export type User = Model & {
     name: string
     email: string
 }
 
-export type Account = {
-    id: number
+export type Account = Model & {
     phone: number
     user?: User
     user_id: number
 }
 
-export type Transaction = {
-    id: number
+export type Transaction = Model & {
     status: Status
     description: string
     destination: string
     type: string
     amount: number
-    created_at: string
-    updated_at: string
     payment?: Payment
     account?: Account
 }
 
 export type Payment = {
-    id: number
     payment_id: number
     amount: number
     type: string
     subtype: string
     status: Status
-    updated_at: string
     transaction_id: number
 }
 
-export type PersonalAccount = {
-    id: number
+export type PersonalAccount = Model & {
+    type: string
 }
 
-export type PersonalAccountTransaction = {
-    id: number
+export type PersonalAccountTransaction = Transaction & {
+    personal_account?: PersonalAccount
+}
+
+export type Group = Model & {
+    name: string
+}
+export type GroupAccount = Model & {
+    balance: number
+    group: Group
+}
+
+export type GroupAccountTransaction = Transaction & {
+    group_account?: GroupAccount
+}
+
+export type CollectiveInvestment = Model & {
+    amount: number
+    invested_at: string
+    investment_date: string
+}
+
+export type SubInvestment = Model & {
+    amount: number
+    interest: string
+    personal_account: PersonalAccount
+    group: Group
 }

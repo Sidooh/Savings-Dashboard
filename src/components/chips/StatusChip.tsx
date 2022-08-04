@@ -1,10 +1,10 @@
 import { Status } from 'utils/enums';
 import { ListItemIcon, Menu, MenuItem } from '@mui/material';
-import { Error, EventBusy, Info } from '@mui/icons-material';
+import { EventBusy, Info } from '@mui/icons-material';
 import { useState } from 'react';
 import SoftBadge from '../SoftBadge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faHourglassStart } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faCircleExclamation, faHourglassStart } from '@fortawesome/free-solid-svg-icons';
 
 const statusProps = (status: Status) => {
     let color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'dark', icon;
@@ -20,7 +20,7 @@ const statusProps = (status: Status) => {
         icon = <Info/>;
     } else if ([Status.FAILED].includes(status)) {
         color = 'danger';
-        icon = <Error/>;
+        icon = <FontAwesomeIcon icon={faCircleExclamation}/>;
     } else if ([Status.EXPIRED].includes(status)) {
         icon = <EventBusy fontSize={'small'}/>;
     }

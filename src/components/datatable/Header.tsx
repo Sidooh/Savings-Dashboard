@@ -1,10 +1,12 @@
-import { Col, Form, Row } from 'react-bootstrap';
-import { Button, Checkbox, IconButton, ListItemText, Menu, MenuItem, Switch, Tooltip } from '@mui/material';
-import { Add, ViewColumn } from '@mui/icons-material';
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Checkbox, IconButton, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
 import { Dispatch, SetStateAction, useState } from 'react';
 import pluralize from 'pluralize';
 import { Str } from 'utils/helpers';
 import { Table } from '@tanstack/react-table';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTableColumns } from '@fortawesome/free-solid-svg-icons';
+import Flex from 'components/Flex';
 
 interface Header {
     table: Table<any>;
@@ -37,33 +39,31 @@ const Header = ({table, rowSelection, filtering, setFiltering, title, onCreateRo
             </Col>
             <Col sm="auto" className={'text-end'}>
                 {selectedRowsCount ? (
-                    <div className="d-flex">
+                    <Flex>
                         <Form.Select size="sm" aria-label="Bulk actions" onChange={e => setAction(e.target.value)}>
                             <option value={''} hidden>Bulk Actions</option>
                             <option value="refund">Refund</option>
                             <option value="delete">Delete</option>
                         </Form.Select>
-                        <Button type="button" variant="contained" size="small" className="ms-2"
-                                onClick={() => executeBulkAction()}>
+                        <Button variant="primary" size="sm" className="ms-2" onClick={() => executeBulkAction()}>
                             Apply
                         </Button>
-                    </div>
+                    </Flex>
                 ) : (
-                    <>
+                    <Flex>
                         {onCreateRow && (
-                            <Button size="small" startIcon={<Add/>} className="me-2"
-                                    onClick={onCreateRow} variant={'contained'}>
+                            <Button size="sm" className="me-2" onClick={onCreateRow} variant={'success'}>
                                 <span className="d-none d-sm-inline-block ms-1">New</span>
                             </Button>
                         )}
                         <Tooltip title={`${filtering ? 'Disable' : 'Enable'} Filtering`}>
-                            <Switch checked={filtering} onChange={() => setFiltering(!filtering)}/>
+                            <Form.Check type="switch" checked={filtering} onChange={() => setFiltering(!filtering)}/>
                         </Tooltip>
                         <Tooltip title={`Show Columns`}>
                             <IconButton aria-controls={Boolean(anchorEl) ? 'demo-positioned-menu' : undefined}
                                     aria-haspopup="true" aria-expanded={Boolean(anchorEl) ? 'true' : undefined}
                                     onClick={e => setAnchorEl(e.currentTarget)}>
-                                <ViewColumn/>
+                                <FontAwesomeIcon icon={faTableColumns} size={'sm'}/>
                             </IconButton>
                         </Tooltip>
                         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(undefined)}
@@ -84,7 +84,7 @@ const Header = ({table, rowSelection, filtering, setFiltering, title, onCreateRo
                                 </MenuItem>
                             ))}
                         </Menu>
-                    </>
+                    </Flex>
                 )}
             </Col>
         </Row>

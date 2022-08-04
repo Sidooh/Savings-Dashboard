@@ -1,10 +1,10 @@
-import { PersonalAccountTransaction } from '../utils/types';
-import DataTable from '../components/datatable';
+import { PersonalAccountTransaction } from '../../utils/types';
+import DataTable from '../datatable';
 import { Card } from 'react-bootstrap';
 import SidoohAccount from 'components/SidoohAccount';
-import { currencyFormat } from '../utils/helpers';
-import StatusChip from '../components/chips/StatusChip';
-import TableDate from '../components/TableDate';
+import { currencyFormat } from '../../utils/helpers';
+import StatusChip from '../chips/StatusChip';
+import TableDate from '../TableDate';
 
 const Transactions = ({title, transactions}: { title: string, transactions: PersonalAccountTransaction[] }) => {
     return (
@@ -15,6 +15,10 @@ const Transactions = ({title, transactions}: { title: string, transactions: Pers
                         accessorKey: 'customer',
                         header: 'Customer',
                         cell: ({row}: any) => <SidoohAccount account={row.original.account}/>
+                    },
+                    {
+                        accessorKey: 'type',
+                        header: 'Type',
                     },
                     {
                         accessorKey: 'amount',

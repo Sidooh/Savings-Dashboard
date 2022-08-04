@@ -35,7 +35,8 @@ const routes: RouteType[] = [
                 name: 'Accounts',
                 icon: faUsersLine,
                 to: '/personal-accounts',
-                active: true
+                active: true,
+                exact: true,
             },
             {
                 name: 'Transactions',
@@ -46,13 +47,13 @@ const routes: RouteType[] = [
             {
                 name: 'Collective Investments',
                 icon: faHandHoldingDollar,
-                to: '/earnings/cashbacks',
+                to: '/personal-accounts/collective-investments',
                 active: true
             },
             {
                 name: 'Sub Investments',
                 icon: faCoins,
-                to: '/earnings/cashbacks',
+                to: '/personal-accounts/sub-investments',
                 active: true
             },
         ]
@@ -63,31 +64,34 @@ const routes: RouteType[] = [
             {
                 name: 'Groups',
                 icon: faPeopleLine,
-                to: '/subscriptions-types',
-                active: true
+                to: '/groups',
+                active: true,
+                exact: true,
             },
             {
                 name: 'Accounts',
                 icon: faUsersLine,
-                to: '/subscriptions',
-                active: true
+                to: '/group-accounts',
+                active: true,
+                exact: true,
             },
             {
                 name: 'Transactions',
                 icon: faGlobe,
-                to: '/subscriptions',
-                active: true
+                to: '/group-accounts/transactions',
+                active: true,
+                exact: true,
             },
             {
                 name: 'Collective Investments',
                 icon: faHandHoldingDollar,
-                to: '/earnings/cashbacks',
+                to: '/groups/collective-investments',
                 active: true
             },
             {
                 name: 'Sub Investments',
                 icon: faCoins,
-                to: '/earnings/cashbacks',
+                to: '/groups/sub-investments',
                 active: true
             },
         ]

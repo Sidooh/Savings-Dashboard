@@ -16,7 +16,7 @@ type FlexType = {
 
 const Flex = ({
     justifyContent,
-    alignItems = 'center',
+    alignItems,
     alignContent,
     inline,
     wrap,

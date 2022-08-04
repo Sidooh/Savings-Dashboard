@@ -2,6 +2,7 @@
 
 :root {
     --falcon-body-font-family: 'Varela Round', cursive !important;
+    --falcon-line-chart-gradient: linear-gradient(-45deg, #414ba7, #4a2613)
 }
 
 .modal-footer > * {
@@ -257,4 +258,8 @@ table td.actions .btn {
 
 .fa-icon-wait {
     opacity: 1;
+}
+
+.nine-dots-dropdown {
+    height: 18rem;
 }

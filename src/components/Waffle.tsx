@@ -61,9 +61,8 @@ const WaffleLinkItem = ({avatar, avatarText, img, title, link, hr, enabled = fal
                 </Col>
             ) : (
                 <Col xs={4}>
-                    <div
-                        className={`d-block ${!enabled ? 'bg-100 ' : 'hover-bg-200 cursor-pointer rounded-3'} px-2 py-3 text-center text-decoration-none`}
-                        onClick={() => !enabled ? false : window.open(link)}>
+                    <a href={enabled ? link : undefined} target={'_blank'} rel="noopener noreferrer"
+                       className={`d-block ${!enabled ? 'bg-100 ' : 'hover-bg-200 cursor-pointer rounded-3'} px-2 py-3 text-center text-decoration-none`}>
                         {avatar && <Avatar src={avatar} size="2xl"/>}
                         {avatarText && (
                             <Avatar
@@ -74,17 +73,10 @@ const WaffleLinkItem = ({avatar, avatarText, img, title, link, hr, enabled = fal
                             />
                         )}
                         {img && <img src={img} width={40} height={40} alt={''}/>}
-                        <p
-                            className={classNames(
-                                'mb-0 fw-medium text-800 text-truncate fs--2',
-                                {
-                                    'pt-1': img
-                                }
-                            )}
-                        >
+                        <p className={classNames('mb-0 fw-medium text-800 text-truncate fs--2', {'pt-1': img})}>
                             {title}
                         </p>
-                    </div>
+                    </a>
                 </Col>
             )}
         </>

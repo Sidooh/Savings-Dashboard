@@ -14,6 +14,11 @@ export const CONFIG = {
                     url: import.meta.env.VITE_PRODUCTS_DASHBOARD_URL
                 }
             },
+            payments: {
+                dashboard: {
+                    url: import.meta.env.VITE_PAYMENTS_DASHBOARD_URL
+                }
+            },
             notify: {
                 dashboard: {
                     url: import.meta.env.VITE_NOTIFY_DASHBOARD_URL

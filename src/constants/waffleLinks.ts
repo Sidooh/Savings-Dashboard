@@ -34,21 +34,23 @@ export const waffleLinks: WaffleLinkType[] = [
     },
     {
         avatarText: 'P',
+        title: 'Payments',
+        link: CONFIG.sidooh.services.payments.dashboard.url,
+        contentClass: 'bg-soft-primary text-primary',
+        enabled: true
+    },
+    {
+        avatarText: 'P',
         title: 'Products',
         link: CONFIG.sidooh.services.products.dashboard.url,
         contentClass: 'bg-soft-primary text-primary',
         enabled: true
     },
     {
-        avatarText: 'S',
-        title: 'Savings',
-        link: `/events/event-detail`,
-        contentClass: 'bg-soft-primary text-primary',
-    },
-    {
         avatarText: 'U',
         title: 'USSD',
         link: CONFIG.sidooh.services.ussd.dashboard.url,
         contentClass: 'bg-soft-primary text-primary',
+        enabled: true
     },
 ];

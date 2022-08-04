@@ -1385,6 +1385,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"echarts@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "echarts@npm:5.3.3"
+  dependencies:
+    tslib: 2.3.0
+    zrender: 5.3.2
+  checksum: d6feb97132418421de56c18ae1e9c103849156cde1aa41804d463cf1904eec1f8994f63c0c2cd87e48574556ab408c7a05eeacb6fea2cae5843dcf8c041de515
+  languageName: node
+  linkType: hard
+
 "electron-to-chromium@npm:^1.4.202":
   version: 1.4.208
   resolution: "electron-to-chromium@npm:1.4.208"
@@ -2782,6 +2792,7 @@ __metadata:
     "@types/react-router-dom": ^5.3.3
     "@types/yup": ^0
     "@vitejs/plugin-react": ^2.0.0
+    echarts: ^5.3.3
     formik: ^2.2.9
     libphonenumber-js: ^1.10.11
     moment: ^2.29.4
@@ -2793,6 +2804,7 @@ __metadata:
     react-redux: ^8.0.2
     react-router-dom: ^6.3.0
     simplebar-react: ^2.4.1
+    size-sensor: ^1.0.1
     sweetalert2: ^11.4.24
     sweetalert2-react-content: ^5.0.2
     typescript: ^4.6.4
@@ -2868,6 +2880,13 @@ __metadata:
     lodash.memoize: ^4.1.2
     lodash.throttle: ^4.1.1
   checksum: bbc1cc1a545181fc8a0b6fe7a3bd65b63daf4f998a29cf1ff5f85ee6561a9eaa87bf76818816c76cbd14d4351abbc7fde0d8e86dafc42cd27593b0be653740eb
+  languageName: node
+  linkType: hard
+
+"size-sensor@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "size-sensor@npm:1.0.1"
+  checksum: 8af239ea1acac3f9e1fe1b6cc0436b7cd2105c0eee56cebfdc71ec1b6ec9fcb3065bd4214c59aa6615b58f778ac4732056a8d1e909506dacaef476220f27bec3
   languageName: node
   linkType: hard
 
@@ -3031,6 +3050,13 @@ __metadata:
   version: 2.0.2
   resolution: "toposort@npm:2.0.2"
   checksum: d64c74b570391c9432873f48e231b439ee56bc49f7cb9780b505cfdf5cb832f808d0bae072515d93834dd6bceca5bb34448b5b4b408335e4d4716eaf68195dcb
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.3.0":
+  version: 2.3.0
+  resolution: "tslib@npm:2.3.0"
+  checksum: 8869694c26e4a7b56d449662fd54a4f9ba872c889d991202c74462bd99f10e61d5bd63199566c4284c0f742277736292a969642cc7b590f98727a7cae9529122
   languageName: node
   linkType: hard
 
@@ -3217,5 +3243,14 @@ __metadata:
     property-expr: ^2.0.4
     toposort: ^2.0.2
   checksum: 43a16786b47cc910fed4891cebdd89df6d6e31702e9462e8f969c73eac88551ce750732608012201ea6b93802c8847cb0aa27b5d57370640f4ecf30f9f97d4b0
+  languageName: node
+  linkType: hard
+
+"zrender@npm:5.3.2":
+  version: 5.3.2
+  resolution: "zrender@npm:5.3.2"
+  dependencies:
+    tslib: 2.3.0
+  checksum: 8f7f4c825cb0e21ff897cd9d4fad291dd0c45604546981ec78c1b6b65359875458c05b4d5eef9a1a52f1aa758b0dbfc923df3bd419a1b880a17963d15813a9ff
   languageName: node
   linkType: hard

@@ -9,15 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Chip } from '@mui/material';
 import Flex from 'components/Flex';
 
-type CollapseItemsType = {
-    route: RouteChildType
-};
-
-type NavbarVerticalMenuItemType = {
-    route: RouteChildType
-};
-
-const NavbarVerticalMenuItem = ({route}: NavbarVerticalMenuItemType) => (
+const NavbarVerticalMenuItem = ({route}: { route: RouteChildType }) => (
     <Flex alignItems="center">
         {route.icon && <span className="nav-link-icon"><FontAwesomeIcon icon={route.icon}/></span>}
         <span className="nav-link-text ps-1">{route.name}</span>
@@ -25,21 +17,22 @@ const NavbarVerticalMenuItem = ({route}: NavbarVerticalMenuItemType) => (
     </Flex>
 );
 
-const CollapseItems = ({route}: CollapseItemsType) => {
+const CollapseItems = ({route}: { route: RouteChildType }) => {
     const {pathname} = useLocation();
 
-    const openCollapse = (childrens: RouteChildType[] | undefined) => {
-        if (!childrens) return;
-        const checkLink = (children: RouteChildType) => {
-            if (children.to === pathname) return true;
+    const openCollapse = (children: RouteChildType[] | undefined) => {
+        if (!children) return;
+
+        const checkLink = (child: RouteChildType) => {
+            if (child.to === pathname) return true;
 
             return (
-                Object.prototype.hasOwnProperty.call(children, 'children') &&
-                children.children?.some(checkLink)
+                Object.prototype.hasOwnProperty.call(child, 'children') &&
+                child.children?.some(checkLink)
             );
         };
 
-        return childrens.some(checkLink);
+        return children.some(checkLink);
     };
 
     const [open, setOpen] = useState(openCollapse(route.children));
@@ -60,13 +53,9 @@ const CollapseItems = ({route}: CollapseItemsType) => {
     );
 };
 
-type NavbarVerticalMenuType = {
-    routes: RouteChildType[]
-};
-
-const NavbarVerticalMenu = ({routes}: NavbarVerticalMenuType) => {
-    const dispatch = useAppDispatch()
-    const {showBurgerMenu} = useAppSelector((state) =>state.theme);
+const NavbarVerticalMenu = ({routes}: { routes: RouteChildType[] }) => {
+    const dispatch = useAppDispatch();
+    const {showBurgerMenu} = useAppSelector((state) => state.theme);
 
     const handleNavItemClick = () => {
         if (showBurgerMenu) dispatch(setTheme({key: 'showBurgerMenu', value: !showBurgerMenu}));
@@ -74,27 +63,21 @@ const NavbarVerticalMenu = ({routes}: NavbarVerticalMenuType) => {
 
     return (
         <>
-            {
-                routes.map(route => {
-                    if (!route.children) {
-                        return (
-                            <Nav.Item as="li" key={route.name} onClick={handleNavItemClick}>
-                                <NavLink
-                                    end={route.exact}
-                                    to={String(route.to)}
-                                    state={{open: route.to === '/authentication-modal'}}
-                                    className={({isActive}) =>
-                                        isActive ? 'active nav-link' : 'nav-link'
-                                    }
-                                >
-                                    <NavbarVerticalMenuItem route={route}/>
-                                </NavLink>
-                            </Nav.Item>
-                        );
-                    }
-                    return <CollapseItems route={route} key={route.name}/>;
-                })
-            }
+            {routes.map(route => {
+                if (!route.children) {
+                    return (
+                        <Nav.Item as="li" key={route.name} onClick={handleNavItemClick}>
+                            <NavLink end={route.exact} to={String(route.to)}
+                                     state={{open: route.to === '/authentication-modal'}}
+                                     className={({isActive}) => isActive ? 'active nav-link' : 'nav-link'}>
+                                <NavbarVerticalMenuItem route={route}/>
+                            </NavLink>
+                        </Nav.Item>
+                    );
+                }
+
+                return <CollapseItems route={route} key={route.name}/>;
+            })}
         </>
     );
 };
