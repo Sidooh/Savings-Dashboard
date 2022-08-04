@@ -2,10 +2,10 @@ import { ComponentLoader } from 'components/Loader';
 import { lazy, Suspense } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
+const ChartWrapper = lazy(() => import('./chart/ChartWrapper'));
 const Summaries = lazy(() => import('./Summaries'));
 const RecentPersonalTransactions = lazy(() => import('./RecentPersonalTransactions'));
 const RecentPersonalCollectiveInvestments = lazy(() => import('./RecentPersonalCollectiveInvestments'));
-const ChartWrapper = lazy(() => import('./chart/ChartWrapper'));
 
 const Dashboard = () => {
     return (

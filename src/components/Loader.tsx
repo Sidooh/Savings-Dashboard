@@ -4,24 +4,24 @@ import { styled } from '@mui/material/styles';
 
 const PageLoaderWrapper = styled('div')({
     position: 'fixed',
-    top     : 0,
-    left    : 0,
-    zIndex  : 1301,
-    width   : '100%'
+    top: 0,
+    left: 0,
+    zIndex: 1301,
+    width: '100%'
 });
 
 const SectionLoaderWrapper = styled(Box)({
-    position : 'absolute',
-    top      : '50%',
-    left     : '50%',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
     transform: 'translate(-50%, -70%)',
-    zIndex   : 1301,
+    zIndex: 1301,
 });
 
 const ComponentLoaderWrapper = styled(Box)({
-    display       : 'flex',
+    display: 'flex',
     justifyContent: 'center',
-    alignItems    : 'center',
+    alignItems: 'center',
     minHeight: '20vh'
 });
 
@@ -54,10 +54,10 @@ const SectionLoader = () => {
                     variant="indeterminate"
                     disableShrink
                     sx={{
-                        color                                   : (theme) => (theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8'),
-                        animationDuration                       : '700ms',
-                        position                                : 'absolute',
-                        left                                    : 0,
+                        color: (theme) => (theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8'),
+                        animationDuration: '700ms',
+                        position: 'absolute',
+                        left: 0,
                         [`& .${circularProgressClasses.circle}`]: {
                             strokeLinecap: 'round',
                         },

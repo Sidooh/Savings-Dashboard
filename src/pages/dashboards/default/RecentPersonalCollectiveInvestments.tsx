@@ -1,5 +1,5 @@
 import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
+import { ComponentLoader } from 'components/Loader';
 import CollectiveInvestmentsTable from 'components/tables/CollectiveInvestmentsTable';
 import { useGetRecentPersonalCollectiveInvestmentQuery } from 'features/savings/savingsApi';
 
@@ -7,7 +7,7 @@ const RecentPersonalCollectiveInvestments = () => {
     let {data: investments, isLoading, isSuccess, isError, error} = useGetRecentPersonalCollectiveInvestmentQuery();
 
     if (isError) return <SectionError error={error}/>;
-    if (isLoading || !isSuccess || !investments) return <SectionLoader/>;
+    if (isLoading || !isSuccess || !investments) return <ComponentLoader/>;
 
     console.log(investments);
 
