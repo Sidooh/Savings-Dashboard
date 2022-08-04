@@ -1,7 +1,7 @@
 import { useGetPersonalAccountTransactionQuery } from '../../features/personal-accounts/personalAccountApi';
 import { SectionError } from '../../components/Error';
 import { SectionLoader } from '../../components/Loader';
-import SavingsTransactionTable from '../SavingsTransactionTable';
+import SavingsTransactionTable from '../../components/tables/SavingsTransactionTable';
 
 const Transactions = () => {
     let {data: transactions, isLoading, isSuccess, isError, error} = useGetPersonalAccountTransactionQuery();

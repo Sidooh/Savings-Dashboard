@@ -1,8 +1,8 @@
-import { CollectiveInvestment } from '../utils/types';
-import DataTable from '../components/datatable';
+import { CollectiveInvestment } from '../../utils/types';
+import DataTable from '../datatable';
 import { Card } from 'react-bootstrap';
-import { currencyFormat } from '../utils/helpers';
-import TableDate from '../components/TableDate';
+import { currencyFormat } from '../../utils/helpers';
+import TableDate from '../TableDate';
 
 const CollectiveInvestmentsTable = ({title, investments}: { title: string, investments: CollectiveInvestment[] }) => {
     return (

@@ -258,3 +258,7 @@ table td.actions .btn {
 .fa-icon-wait {
     opacity: 1;
 }
+
+.nine-dots-dropdown {
+    height: 18rem;
+}

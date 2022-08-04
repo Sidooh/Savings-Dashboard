@@ -1,6 +1,6 @@
 import { SectionError } from '../../components/Error';
 import { SectionLoader } from '../../components/Loader';
-import SavingsTransactionTable from '../SavingsTransactionTable';
+import SavingsTransactionTable from '../../components/tables/SavingsTransactionTable';
 import { useGetGroupAccountTransactionQuery } from '../../features/group-accounts/groupAccountApi';
 
 const Transactions = () => {
