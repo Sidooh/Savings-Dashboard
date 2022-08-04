@@ -1,37 +1,30 @@
 import { ComponentLoader } from 'components/Loader';
-import { Suspense } from 'react';
-import Summaries from './Summaries';
-import RecentPersonalTransactions from './RecentPersonalTransactions';
+import { lazy, Suspense } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import RecentPersonalCollectiveInvestments from './RecentPersonalCollectiveInvestments';
-import ChartWrapper from './chart/ChartWrapper';
+
+const Summaries = lazy(() => import('./Summaries'));
+const RecentPersonalTransactions = lazy(() => import('./RecentPersonalTransactions'));
+const RecentPersonalCollectiveInvestments = lazy(() => import('./RecentPersonalCollectiveInvestments'));
+const ChartWrapper = lazy(() => import('./chart/ChartWrapper'));
 
 const Dashboard = () => {
     return (
         <>
-            <Row className="g-3 mb-3">
-                <Col>
-                    <Suspense fallback={<ComponentLoader/>}><ChartWrapper/></Suspense>
-                </Col>
-            </Row>
+            <Suspense fallback={<ComponentLoader/>}>
+                <Row className="g-3 mb-3"><Col><ChartWrapper/></Col></Row>
+            </Suspense>
 
-            <Row className="g-3 mb-3">
-                <Col>
-                    <Suspense fallback={<ComponentLoader/>}><Summaries/></Suspense>
-                </Col>
-            </Row>
+            <Suspense fallback={<ComponentLoader/>}>
+                <Row className="g-3 mb-3"><Col><Summaries/></Col></Row>
+            </Suspense>
 
-            <Row>
-                <Col>
-                    <Suspense fallback={<ComponentLoader/>}><RecentPersonalTransactions/></Suspense>
-                </Col>
-            </Row>
+            <Suspense fallback={<ComponentLoader/>}>
+                <Row><Col><RecentPersonalTransactions/></Col></Row>
+            </Suspense>
 
-            <Row>
-                <Col>
-                    <Suspense fallback={<ComponentLoader/>}><RecentPersonalCollectiveInvestments/></Suspense>
-                </Col>
-            </Row>
+            <Suspense fallback={<ComponentLoader/>}>
+                <Row><Col><RecentPersonalCollectiveInvestments/></Col></Row>
+            </Suspense>
         </>
     );
 };
