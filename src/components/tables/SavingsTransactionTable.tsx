@@ -19,6 +19,10 @@ const Transactions = ({title, transactions}: { title: string, transactions: Pers
                         header: 'Type',
                     },
                     {
+                        accessorKey: 'description',
+                        header: 'Description',
+                    },
+                    {
                         accessorKey: 'amount',
                         header: 'Amount',
                         cell: ({row}: any) => currencyFormat(row.original.amount)
