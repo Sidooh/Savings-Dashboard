@@ -1,10 +1,8 @@
 import { PersonalAccountTransaction } from '../../utils/types';
-import DataTable from '../datatable';
 import { Card } from 'react-bootstrap';
 import SidoohAccount from 'components/SidoohAccount';
 import { currencyFormat } from '../../utils/helpers';
-import StatusChip from '../chips/StatusChip';
-import TableDate from '../TableDate';
+import { DataTable, StatusChip, TableDate } from '@nabcellent/sui-react';
 
 const Transactions = ({title, transactions}: { title: string, transactions: PersonalAccountTransaction[] }) => {
     return (

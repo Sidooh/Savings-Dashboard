@@ -4,7 +4,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { useGetDashboardSummariesQuery } from "features/savings/savingsApi";
 import CardBgCorner from 'components/CardBgCorner';
 import CountUp from 'react-countup';
-import SoftBadge from 'components/SoftBadge';
+import { Badge } from '@nabcellent/sui-react';
 
 const Board = ({
     title,
@@ -24,9 +24,9 @@ const Board = ({
                             <h4 className="fw-normal text-700 m-0">
                                 <CountUp end={total} separator="," prefix={currency ? 'KES ' : ''}/>
                             </h4>
-                            <SoftBadge bg="primary" className={`fw-bold fs-9 mt-2 mb-3`} pill soft>
+                            <Badge bg="primary" className={`fw-bold fs-9 mt-2 mb-3`} pill soft>
                                 <CountUp end={today} separator="," prefix={currency ? 'KES ' : ''}/>
-                            </SoftBadge>
+                            </Badge>
                         </div>
                     </Col>
                 </Row>

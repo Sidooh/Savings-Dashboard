@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from 'react';
 import { Col, Nav, Navbar, Row } from 'react-bootstrap';
-import Flex from 'components/Flex';
+import { Flex } from '@nabcellent/sui-react';
 import Logo from 'components/Logo';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
 import ToggleButton from './ToggleButton';

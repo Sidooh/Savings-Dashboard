@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SectionError } from 'components/Error';
 import { ComponentLoader } from 'components/Loader';
 import { useGetDashboardChartDataQuery } from 'features/savings/savingsApi';
-import Flex from 'components/Flex';
+import { Flex } from '@nabcellent/sui-react';
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSync } from '@fortawesome/free-solid-svg-icons';

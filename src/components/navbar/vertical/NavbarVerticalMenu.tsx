@@ -7,7 +7,7 @@ import { setTheme } from 'features/theme/themeSlice';
 import { RouteChildType } from 'utils/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Chip } from '@mui/material';
-import Flex from 'components/Flex';
+import { Flex } from '@nabcellent/sui-react';
 
 const NavbarVerticalMenuItem = ({route}: { route: RouteChildType }) => (
     <Flex alignItems="center">

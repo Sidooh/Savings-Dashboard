@@ -2,11 +2,10 @@ import { useGetPersonalSubInvestmentsQuery } from 'features/personal-accounts/pe
 import { SectionError } from 'components/Error';
 import { SectionLoader } from 'components/Loader';
 import { Card } from 'react-bootstrap';
-import DataTable from 'components/datatable';
+import { DataTable, TableDate } from '@nabcellent/sui-react';
 import SidoohAccount from 'components/SidoohAccount';
 import { SubInvestment } from 'utils/types';
 import { currencyFormat } from 'utils/helpers';
-import TableDate from 'components/TableDate';
 
 const SubInvestments = () => {
     let {data: investments, isLoading, isSuccess, isError, error} = useGetPersonalSubInvestmentsQuery();

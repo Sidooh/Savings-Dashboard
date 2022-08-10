@@ -8,7 +8,8 @@ import { RootState } from 'app/store';
 import { SectionError } from 'components/Error';
 import { SectionLoader } from 'components/Loader';
 import { ErrorBoundary } from 'components/ErrorBoundary';
-import Footer from 'components/Footer';
+import { Footer } from '@nabcellent/sui-react';
+import { CONFIG } from '../config';
 
 const MainLayout = () => {
     const {hash, pathname} = useLocation();
@@ -43,7 +44,7 @@ const MainLayout = () => {
                     <Suspense fallback={<SectionLoader/>}><Outlet/></Suspense>
                 </ErrorBoundary>
 
-                {!isKanban && <Footer/>}
+                {!isKanban && <Footer serviceName={'Savings'} version={CONFIG.sidooh.version}/>}
             </div>
         </div>
     );
