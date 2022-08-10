@@ -18,10 +18,8 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.93",
     "@mui/material": "^5.9.3",
-    "@nabcellent/sui-react": "^1.1.2",
+    "@nabcellent/sui-react": "^1.1.3",
     "@reduxjs/toolkit": "^1.8.3",
-    "@tanstack/match-sorter-utils": "^8.1.1",
-    "@tanstack/react-table": "^8.5.2",
     "echarts": "^5.3.3",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
@@ -37,7 +35,6 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/pluralize": "^0.0.29",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",

@@ -773,13 +773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nabcellent/sui-react@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@nabcellent/sui-react@npm:1.1.2"
+"@nabcellent/sui-react@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@nabcellent/sui-react@npm:1.1.3"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 15991daca35724fbea31768244e39cdfb88bb46f76586e0bfd9c77ea9d0a174ce7a577a8033e77a044ef0a5b147380b36f5587b84ea42e1f22db6e671a99aa7e
+  checksum: dd351da72a9550f32845f64657f9a34d43a6be0f067e15e8566fd90f0d9bcf9ea0dab53e146d3271ff2b22485b4939f017d20e2ed7d58c2ef70e687d0b41328a
   languageName: node
   linkType: hard
 
@@ -872,34 +872,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/match-sorter-utils@npm:^8.1.1":
-  version: 8.1.1
-  resolution: "@tanstack/match-sorter-utils@npm:8.1.1"
-  dependencies:
-    remove-accents: 0.4.2
-  checksum: bf1458b7ca08cf79750ebd46fddef9c9b845ef55b5b69c0f7f69d48d6cbd73dbfd98763509f655298033b93cfc92b21d54f9f13a4d631cc68ca9191913967205
-  languageName: node
-  linkType: hard
-
-"@tanstack/react-table@npm:^8.5.2":
-  version: 8.5.11
-  resolution: "@tanstack/react-table@npm:8.5.11"
-  dependencies:
-    "@tanstack/table-core": 8.5.11
-  peerDependencies:
-    react: ">=16"
-    react-dom: ">=16"
-  checksum: 7ab4bfb6c6f2ea3d7a17332297cf77cdd3ca231fde8cb61be94dec603e3e7316bd7661c08c4430b02fd4cb7e7b42f733d854e8a872bb094529dc5d32f9dd2acc
-  languageName: node
-  linkType: hard
-
-"@tanstack/table-core@npm:8.5.11":
-  version: 8.5.11
-  resolution: "@tanstack/table-core@npm:8.5.11"
-  checksum: f518ba072f0098e9cc2e609bb9da060e2c94c3aed09484effd9e2acb26a512e9566a00fabebb3fe5300763c715132464c4494307774d9a2e5ffc8ea3b7aa3f49
-  languageName: node
-  linkType: hard
-
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -935,13 +907,6 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: fd6bce2b674b6efc3db4c7c3d336bd70c90838e8439de639b909ce22f3720d21344f52427f1d9e57b265fcb7f6c018699b99e5e0c208a1a4823014269a6bf35b
-  languageName: node
-  linkType: hard
-
-"@types/pluralize@npm:^0.0.29":
-  version: 0.0.29
-  resolution: "@types/pluralize@npm:0.0.29"
-  checksum: db7732b733ba1dc59f080f87364c9f985c1ae9f1e5ec5fcefb83c1327149e01ecac42766352eb7b19b117cf39defa99cf514629f3666968a3bdeb00e74f2a97e
   languageName: node
   linkType: hard
 
@@ -2634,13 +2599,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remove-accents@npm:0.4.2":
-  version: 0.4.2
-  resolution: "remove-accents@npm:0.4.2"
-  checksum: 84a6988555dea24115e2d1954db99509588d43fe55a1590f0b5894802776f7b488b3151c37ceb9e4f4b646f26b80b7325dcea2fae58bc3865df146e1fa606711
-  languageName: node
-  linkType: hard
-
 "reselect@npm:^4.1.5":
   version: 4.1.6
   resolution: "reselect@npm:4.1.6"
@@ -2747,11 +2705,8 @@ __metadata:
     "@mui/icons-material": ^5.8.4
     "@mui/lab": ^5.0.0-alpha.93
     "@mui/material": ^5.9.3
-    "@nabcellent/sui-react": ^1.1.2
+    "@nabcellent/sui-react": ^1.1.3
     "@reduxjs/toolkit": ^1.8.3
-    "@tanstack/match-sorter-utils": ^8.1.1
-    "@tanstack/react-table": ^8.5.2
-    "@types/pluralize": ^0.0.29
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
     "@types/react-router-dom": ^5.3.3
