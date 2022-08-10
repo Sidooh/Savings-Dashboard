@@ -580,13 +580,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@juggle/resize-observer@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "@juggle/resize-observer@npm:3.3.1"
-  checksum: ddabc4044276a2cb57d469c4917206c7e39f2463aa8e3430e33e4eda554412afe29c22afa40e6708b49dad5d56768dc83acd68a704b1dcd49a0906bb96b991b2
-  languageName: node
-  linkType: hard
-
 "@mui/base@npm:5.0.0-alpha.92":
   version: 5.0.0-alpha.92
   resolution: "@mui/base@npm:5.0.0-alpha.92"
@@ -780,13 +773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nabcellent/sui-react@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@nabcellent/sui-react@npm:1.1.0"
+"@nabcellent/sui-react@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@nabcellent/sui-react@npm:1.1.2"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 5c2bad7b775f69c572331ddb75acc5b558a97c4087a16f52ff74384934b2c973a1ee1232fbfdb108f0b52a05fbcb365a770b6eb3c7de63cb021f57d42cad2aa9
+  checksum: 15991daca35724fbea31768244e39cdfb88bb46f76586e0bfd9c77ea9d0a174ce7a577a8033e77a044ef0a5b147380b36f5587b84ea42e1f22db6e671a99aa7e
   languageName: node
   linkType: hard
 
@@ -1217,13 +1210,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"can-use-dom@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "can-use-dom@npm:0.1.0"
-  checksum: 488fc94c40f2fcce46ebd41abf17ef0449acf0d6b145116036cd592a8e977e5729918d4b3b7c642ce7b1f5b83d330ade39a172cf6b6ef91093785991a868b308
-  languageName: node
-  linkType: hard
-
 "caniuse-lite@npm:^1.0.30001370":
   version: 1.0.30001374
   resolution: "caniuse-lite@npm:1.0.30001374"
@@ -1315,13 +1301,6 @@ __metadata:
   dependencies:
     safe-buffer: ~5.1.1
   checksum: 985d974a2d33e1a2543ada51c93e1ba2f73eaed608dc39f229afc78f71dcc4c8b7d7c684aa647e3c6a3a204027444d69e53e169ce94e8d1fa8d7dee80c9c8fed
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^3.0.1":
-  version: 3.24.1
-  resolution: "core-js@npm:3.24.1"
-  checksum: 6fb5bf0fd9e9f3e69d95616dd03332fea6758a715d2628c108b5faf17b48b0f580e90c4febb0a523c4665b0991a810de16289f86187fe79d70cc722dbd3edf0e
   languageName: node
   linkType: hard
 
@@ -2050,13 +2029,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.10.11":
-  version: 1.10.11
-  resolution: "libphonenumber-js@npm:1.10.11"
-  checksum: d802159ac87fe9b8783734cafeb7e7c290a6641b067a6f5b57254fae633a6736462672a0bc72ee90772d114de3670ebc6c206ca766dd6a1592f5ff617df6c9d8
-  languageName: node
-  linkType: hard
-
 "lines-and-columns@npm:^1.1.6":
   version: 1.2.4
   resolution: "lines-and-columns@npm:1.2.4"
@@ -2068,27 +2040,6 @@ __metadata:
   version: 4.17.21
   resolution: "lodash-es@npm:4.17.21"
   checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
-  languageName: node
-  linkType: hard
-
-"lodash.debounce@npm:^4.0.8":
-  version: 4.0.8
-  resolution: "lodash.debounce@npm:4.0.8"
-  checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
-  languageName: node
-  linkType: hard
-
-"lodash.memoize@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "lodash.memoize@npm:4.1.2"
-  checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
-  languageName: node
-  linkType: hard
-
-"lodash.throttle@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "lodash.throttle@npm:4.1.1"
-  checksum: 129c0a28cee48b348aef146f638ef8a8b197944d4e9ec26c1890c19d9bf5a5690fe11b655c77a4551268819b32d27f4206343e30c78961f60b561b8608c8c805
   languageName: node
   linkType: hard
 
@@ -2424,13 +2375,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pluralize@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "pluralize@npm:8.0.0"
-  checksum: 08931d4a6a4a5561a7f94f67a31c17e6632cb21e459ab3ff4f6f629d9a822984cf8afef2311d2005fbea5d7ef26016ebb090db008e2d8bce39d0a9a9d218736e
-  languageName: node
-  linkType: hard
-
 "postcss@npm:^8.4.14":
   version: 8.4.16
   resolution: "postcss@npm:8.4.16"
@@ -2471,7 +2415,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -2803,7 +2747,7 @@ __metadata:
     "@mui/icons-material": ^5.8.4
     "@mui/lab": ^5.0.0-alpha.93
     "@mui/material": ^5.9.3
-    "@nabcellent/sui-react": ^1.1.0
+    "@nabcellent/sui-react": ^1.1.2
     "@reduxjs/toolkit": ^1.8.3
     "@tanstack/match-sorter-utils": ^8.1.1
     "@tanstack/react-table": ^8.5.2
@@ -2815,16 +2759,13 @@ __metadata:
     "@vitejs/plugin-react": ^2.0.0
     echarts: ^5.3.3
     formik: ^2.2.9
-    libphonenumber-js: ^1.10.11
     moment: ^2.29.4
-    pluralize: ^8.0.0
     react: ^18.2.0
     react-bootstrap: ^2.4.0
     react-countup: ^6.3.0
     react-dom: ^18.2.0
     react-redux: ^8.0.2
     react-router-dom: ^6.3.0
-    simplebar-react: ^2.4.1
     size-sensor: ^1.0.1
     sweetalert2: ^11.4.24
     sweetalert2-react-content: ^5.0.2
@@ -2874,33 +2815,6 @@ __metadata:
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
-  languageName: node
-  linkType: hard
-
-"simplebar-react@npm:^2.4.1":
-  version: 2.4.1
-  resolution: "simplebar-react@npm:2.4.1"
-  dependencies:
-    prop-types: ^15.6.1
-    simplebar: ^5.3.8
-  peerDependencies:
-    react: ^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0 || ^17.0 || ^18.0.0
-    react-dom: ^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0 || ^17.0 || ^18.0.0
-  checksum: 3fc0b3296cf21cc7f5cd455957fbdf01a90441ebc524de41e9578a5c0c6ddc0d74eb71373dd78bc7f3c01d65d7e8474fa2855b505514abf0fe68a69236ca6f4b
-  languageName: node
-  linkType: hard
-
-"simplebar@npm:^5.3.8":
-  version: 5.3.8
-  resolution: "simplebar@npm:5.3.8"
-  dependencies:
-    "@juggle/resize-observer": ^3.3.1
-    can-use-dom: ^0.1.0
-    core-js: ^3.0.1
-    lodash.debounce: ^4.0.8
-    lodash.memoize: ^4.1.2
-    lodash.throttle: ^4.1.1
-  checksum: bbc1cc1a545181fc8a0b6fe7a3bd65b63daf4f998a29cf1ff5f85ee6561a9eaa87bf76818816c76cbd14d4351abbc7fde0d8e86dafc42cd27593b0be653740eb
   languageName: node
   linkType: hard
 
