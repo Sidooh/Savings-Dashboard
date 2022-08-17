@@ -68,6 +68,16 @@ export type Payment = {
 
 export type PersonalAccount = Model & {
     type: string
+    description: string
+    duration: string
+    frequency: string
+    account?: Account
+    frequency_amount?: number
+    balance: number
+    interest: number
+    target_amount: number
+    status: Status
+    transactions: PersonalAccountTransaction[]
 }
 
 export type PersonalAccountTransaction = Transaction & {
@@ -76,10 +86,23 @@ export type PersonalAccountTransaction = Transaction & {
 
 export type Group = Model & {
     name: string
+    type: string
+    frequency: string
+    interest: number
+    target_amount: number
+    frequency_amount: number
+    balance: number
+    duration: number
+    status: Status
+    group_accounts: GroupAccount[]
 }
 export type GroupAccount = Model & {
+    group_id: number
     balance: number
+    status: Status
     group: Group
+    account?: Account
+    transactions: GroupAccountTransaction[]
 }
 
 export type GroupAccountTransaction = Transaction & {

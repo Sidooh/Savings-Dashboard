@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { CONFIG } from 'config';
-import { CollectiveInvestment, Group, SubInvestment } from 'utils/types';
+import { ApiResponse, CollectiveInvestment, Group, SubInvestment } from 'utils/types';
 
 export const groupsApi = createApi({
     reducerPath: 'groupsApi',
@@ -18,22 +18,32 @@ export const groupsApi = createApi({
     }),
     endpoints: builder => ({
         //  Earning Endpoints
+        getGroup: builder.query<Group, number>({
+            query: id => `/${id}?with_relations=account`,
+            transformResponse: (response: ApiResponse<Group>) => response.data,
+            providesTags: ['Group']
+        }),
         getGroups: builder.query<Group[], void>({
             query: () => '/',
-            transformResponse: (response: { data: Group[] }) => response.data,
+            transformResponse: (response: ApiResponse<Group[]>) => response.data,
             providesTags: ['Group']
         }),
         getGroupCollectiveInvestments: builder.query<CollectiveInvestment[], void>({
             query: () => '/collective-investments',
-            transformResponse: (response: { data: CollectiveInvestment[] }) => response.data,
+            transformResponse: (response: ApiResponse<CollectiveInvestment[]>) => response.data,
             providesTags: ['GroupCollectiveInvestment']
         }),
         getGroupSubInvestments: builder.query<SubInvestment[], void>({
             query: () => '/sub-investments?with_relations=group',
-            transformResponse: (response: { data: SubInvestment[] }) => response.data,
+            transformResponse: (response: ApiResponse<SubInvestment[]>) => response.data,
             providesTags: ['GroupSubInvestment']
         })
     })
 });
 
-export const {useGetGroupsQuery, useGetGroupCollectiveInvestmentsQuery, useGetGroupSubInvestmentsQuery} = groupsApi;
+export const {
+    useGetGroupQuery,
+    useGetGroupsQuery,
+    useGetGroupCollectiveInvestmentsQuery,
+    useGetGroupSubInvestmentsQuery
+} = groupsApi;

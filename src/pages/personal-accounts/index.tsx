@@ -2,6 +2,9 @@ import { useGetPersonalAccountsQuery } from 'features/personal-accounts/personal
 import { currencyFormat, DataTable, SectionError, SectionLoader, StatusChip } from '@nabcellent/sui-react';
 import { Card } from 'react-bootstrap';
 import SidoohAccount from 'components/SidoohAccount';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 const Index = () => {
     let {data: accounts, isLoading, isSuccess, isError, error} = useGetPersonalAccountsQuery();
@@ -44,6 +47,13 @@ const Index = () => {
                         header: 'Status',
                         cell: ({row}: any) => <StatusChip status={row.original.status}/>
                     },
+                    {
+                        id: 'actions',
+                        header: '',
+                        cell: ({ row }: any) => (
+                            <Link to={`/personal-accounts/${row.original.id}`}><FontAwesomeIcon icon={faEye}/></Link>
+                        )
+                    }
                 ]}/>
             </Card.Body>
         </Card>

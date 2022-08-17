@@ -15,13 +15,13 @@ const Board = ({
         <Card>
             <CardBgCorner corner={bgCorner}/>
             <Card.Body as={Row}>
-                <Col className="d-md-flex d-lg-block flex-between-center">
+                <Col className="pe-0 d-md-flex d-lg-block flex-between-center">
                     <h6 className="mb-md-0 mb-lg-3">{title}</h6>
                     <h5 className="fw-normal text-700 m-0">
                         <CountUp end={total} separator="," prefix={currency ? 'KES ' : ''}/>
                     </h5>
                 </Col>
-                <Col lg={'auto'} className={'d-flex align-items-start justify-content-end'}>
+                <Col lg={'auto'} className={'ps-0 d-flex align-items-start justify-content-end'}>
                     <Badge bg={currency ? "success" : 'primary'} pill>
                         <CountUp end={today} separator="," prefix={currency ? 'KES ' : ''}/>
                     </Badge>

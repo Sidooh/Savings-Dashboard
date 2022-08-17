@@ -3,7 +3,9 @@ import { useGetGroupAccountsQuery } from 'features/group-accounts/groupAccountAp
 import { Link } from 'react-router-dom';
 import { GroupAccount } from 'utils/types';
 import SidoohAccount from 'components/SidoohAccount';
-import { currencyFormat, DataTable, SectionError, SectionLoader, TableDate } from '@nabcellent/sui-react';
+import { currencyFormat, DataTable, SectionError, SectionLoader, StatusChip, TableDate } from '@nabcellent/sui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 const Index = () => {
     let {data: accounts, isLoading, isSuccess, isError, error} = useGetGroupAccountsQuery();
@@ -39,6 +41,18 @@ const Index = () => {
                         header: 'Created',
                         cell: ({row}: any) => <TableDate date={row.original.created_at}/>
                     },
+                    {
+                        accessorKey: 'status',
+                        header: 'Status',
+                        cell: ({row}: any) => <StatusChip status={row.original.status}/>
+                    },
+                    {
+                        id: 'actions',
+                        header: '',
+                        cell: ({ row }: any) => (
+                            <Link to={`/group-accounts/${row.original.id}`}><FontAwesomeIcon icon={faEye}/></Link>
+                        )
+                    }
                 ]}/>
             </Card.Body>
         </Card>
