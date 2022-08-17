@@ -19,10 +19,12 @@ const PersonalCollectiveInvestments = lazy(() => import('pages/personal-accounts
 const PersonalSubInvestments = lazy(() => import('pages/personal-accounts/SubInvestments'));
 
 const Groups = lazy(() => import('pages/groups'));
+const ViewGroup = lazy(() => import('pages/groups/Show'));
 const GroupCollectiveInvestments = lazy(() => import('pages/groups/CollectiveInvestments'));
 const GroupSubInvestments = lazy(() => import('pages/groups/SubInvestments'));
 
 const GroupAccounts = lazy(() => import('pages/group-accounts'));
+const ViewGroupAccount = lazy(() => import('pages/group-accounts/Show'));
 const GroupAccountTransactions = lazy(() => import('pages/group-accounts/Transactions'));
 const ViewGroupAccountTransactions = lazy(() => import('pages/group-accounts/ViewTransaction'));
 
@@ -55,10 +57,12 @@ const Layout = () => {
                     <Route path={'/personal-accounts/sub-investments'} element={<PersonalSubInvestments/>}/>
 
                     <Route path={'/group-accounts'} element={<GroupAccounts/>}/>
+                    <Route path={'/group-accounts/:id'} element={<ViewGroupAccount/>}/>
                     <Route path={'/group-accounts/transactions'} element={<GroupAccountTransactions/>}/>
                     <Route path={'/group-accounts/transactions/:id'} element={<ViewGroupAccountTransactions/>}/>
 
                     <Route path={'/groups'} element={<Groups/>}/>
+                    <Route path={'/groups/:id'} element={<ViewGroup/>}/>
                     <Route path={'/groups/collective-investments'} element={<GroupCollectiveInvestments/>}/>
                     <Route path={'/groups/sub-investments'} element={<GroupSubInvestments/>}/>
 

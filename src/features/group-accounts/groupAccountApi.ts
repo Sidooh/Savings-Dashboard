@@ -18,6 +18,11 @@ export const groupAccountApi = createApi({
     }),
     endpoints: builder => ({
         //  Earning Endpoints
+        getGroupAccount: builder.query<GroupAccount, number>({
+            query: id => `/${id}?with_relations=account,group`,
+            transformResponse: (response: { data: GroupAccount }) => response.data,
+            providesTags: ['GroupAccount']
+        }),
         getGroupAccounts: builder.query<GroupAccount[], void>({
             query: () => '?with_relations=account,group',
             transformResponse: (response: { data: GroupAccount[] }) => response.data,
@@ -37,6 +42,7 @@ export const groupAccountApi = createApi({
 });
 
 export const {
+    useGetGroupAccountQuery,
     useGetGroupAccountsQuery,
     useGetGroupAccountTransactionsQuery,
     useGetGroupAccountTransactionQuery

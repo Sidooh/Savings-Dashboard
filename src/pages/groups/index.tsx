@@ -1,6 +1,9 @@
 import { currencyFormat, DataTable, SectionError, SectionLoader, StatusChip } from '@nabcellent/sui-react';
 import { Card } from 'react-bootstrap';
 import { useGetGroupsQuery } from 'features/groups/groupsApi';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 const Index = () => {
     let {data: groups, isLoading, isSuccess, isError, error} = useGetGroupsQuery();
@@ -13,7 +16,7 @@ const Index = () => {
     return (
         <Card className={'mb-3'}>
             <Card.Body>
-                <DataTable title={'Personal Accounts'} data={groups} columns={[
+                <DataTable title={'Groups'} data={groups} columns={[
                     {
                         accessorKey: 'name',
                         header: 'Name',
@@ -42,6 +45,13 @@ const Index = () => {
                         header: 'Status',
                         cell: ({row}: any) => <StatusChip status={row.original.status}/>
                     },
+                    {
+                        id: 'actions',
+                        header: '',
+                        cell: ({ row }: any) => (
+                            <Link to={`/groups/${row.original.id}`}><FontAwesomeIcon icon={faEye}/></Link>
+                        )
+                    }
                 ]}/>
             </Card.Body>
         </Card>

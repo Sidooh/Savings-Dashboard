@@ -41,7 +41,7 @@ const Show = () => {
                     <div className="d-flex align-items-center">
                         <FontAwesomeIcon icon={faUser} className={'text-primary me-2'} />
                         <div className="flex-1">
-                            <p className={'mb-0'}>Account Was Created:</p>
+                            <p className={'mb-0'}>Account Was Created On:</p>
                             <p className={'fs--1 mb-0 text-600'}>{moment(pA.created_at).format('MMM Do Y, @hh:mm A')}</p>
                         </div>
                     </div>
