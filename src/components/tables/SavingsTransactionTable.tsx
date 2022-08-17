@@ -2,6 +2,9 @@ import { PersonalAccountTransaction } from 'utils/types';
 import { Card } from 'react-bootstrap';
 import SidoohAccount from 'components/SidoohAccount';
 import { currencyFormat, DataTable, StatusChip, TableDate } from '@nabcellent/sui-react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 const Transactions = ({title, transactions}: { title: string, transactions: PersonalAccountTransaction[] }) => {
     return (
@@ -36,6 +39,15 @@ const Transactions = ({title, transactions}: { title: string, transactions: Pers
                         header: 'Created',
                         cell: ({row}: any) => <TableDate date={row.original.created_at}/>
                     },
+                    {
+                        id: 'actions',
+                        header: '',
+                        cell: ({row}: any) => (
+                            <Link to={`/transactions/${row.original.id}`}>
+                                <FontAwesomeIcon icon={faEye}/>
+                            </Link>
+                        )
+                    }
                 ]}/>
             </Card.Body>
         </Card>
