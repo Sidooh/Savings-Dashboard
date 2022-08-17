@@ -23,12 +23,21 @@ export const groupAccountApi = createApi({
             transformResponse: (response: { data: GroupAccount[] }) => response.data,
             providesTags: ['GroupAccount']
         }),
-        getGroupAccountTransaction: builder.query<GroupAccountTransaction[], void>({
+        getGroupAccountTransactions: builder.query<GroupAccountTransaction[], void>({
             query: () => '/transactions/?with_relations=account',
             transformResponse: (response: { data: GroupAccountTransaction[] }) => response.data,
+            providesTags: ['GroupAccountTransaction']
+        }),
+        getGroupAccountTransaction: builder.query<GroupAccountTransaction, number>({
+            query: id => `/transactions/${id}/?with_relations=account`,
+            transformResponse: (response: { data: GroupAccountTransaction }) => response.data,
             providesTags: ['GroupAccountTransaction']
         })
     })
 });
 
-export const {useGetGroupAccountsQuery, useGetGroupAccountTransactionQuery} = groupAccountApi;
+export const {
+    useGetGroupAccountsQuery,
+    useGetGroupAccountTransactionsQuery,
+    useGetGroupAccountTransactionQuery
+} = groupAccountApi;

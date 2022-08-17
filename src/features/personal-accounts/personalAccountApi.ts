@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { CONFIG } from 'config';
-import { CollectiveInvestment, PersonalAccount, PersonalAccountTransaction, SubInvestment } from 'utils/types';
+import { CollectiveInvestment, PersonalAccount, SubInvestment } from 'utils/types';
 
 export const personalAccountApi = createApi({
     reducerPath: 'personalAccountApi',
     keepUnusedDataFor: 60 * 5, // 5 minutes
-    tagTypes: ['PersonalAccount', 'PersonalAccountTransaction', 'PersonalCollectiveInvestment'],
+    tagTypes: ['PersonalAccount', 'PersonalCollectiveInvestment'],
     baseQuery: fetchBaseQuery({
         // baseUrl: 'https://api.sidooh.com/v1/savings',
         baseUrl: `${CONFIG.sidooh.services.savings.api.url}/personal-accounts`,
@@ -24,10 +24,10 @@ export const personalAccountApi = createApi({
             transformResponse: (response: { data: PersonalAccount[] }) => response.data,
             providesTags: ['PersonalAccount']
         }),
-        getPersonalAccountTransaction: builder.query<PersonalAccountTransaction[], void>({
-            query: () => '/transactions/?with_relations=account',
-            transformResponse: (response: { data: PersonalAccountTransaction[] }) => response.data,
-            providesTags: ['PersonalAccountTransaction']
+        getPersonalAccount: builder.query<PersonalAccount, number>({
+            query: id => `/${id}?with_relations=account,transactions`,
+            transformResponse: (response: { data: PersonalAccount }) => response.data,
+            providesTags: ['PersonalAccount']
         }),
         getPersonalCollectiveInvestments: builder.query<CollectiveInvestment[], void>({
             query: () => '/collective-investments',
@@ -43,8 +43,8 @@ export const personalAccountApi = createApi({
 });
 
 export const {
+    useGetPersonalAccountQuery,
     useGetPersonalAccountsQuery,
-    useGetPersonalAccountTransactionQuery,
     useGetPersonalCollectiveInvestmentsQuery,
     useGetPersonalSubInvestmentsQuery
 } = personalAccountApi;

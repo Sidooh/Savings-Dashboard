@@ -68,6 +68,16 @@ export type Payment = {
 
 export type PersonalAccount = Model & {
     type: string
+    description: string
+    duration: string
+    frequency: string
+    account?: Account
+    frequency_amount?: number
+    balance: number
+    interest: number
+    target_amount: number
+    status: Status
+    transactions: PersonalAccountTransaction[]
 }
 
 export type PersonalAccountTransaction = Transaction & {
