@@ -1,11 +1,12 @@
 import * as echarts from 'echarts/core';
 import { LineChart } from 'echarts/charts';
 import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
-import { currencyFormat, getColor, rgbaColor } from 'utils/helpers';
+import { getColor } from 'utils/helpers';
 import { useAppSelector } from 'app/hooks';
 import { RootState } from 'app/store';
 import ECharts from 'components/echarts';
 import { Status } from 'utils/enums';
+import { currencyFormat, rgbaColor } from '@nabcellent/sui-react';
 
 type PaymentChartType = {
     data: any
@@ -18,21 +19,21 @@ echarts.use([LineChart, TooltipComponent, GridComponent, LegendComponent]);
 
 const getOptions = (labels: string[], data: any, status: string | Status, isDark: boolean) => ({
     tooltip: {
-        trigger           : 'axis',
-        axisPointer       : {
+        trigger: 'axis',
+        axisPointer: {
             type: 'cross'
         },
-        padding           : [7, 10],
-        backgroundColor   : '#f9fafd',
-        borderColor       : '#d8e2ef',
-        borderWidth       : 1,
+        padding: [7, 10],
+        backgroundColor: '#f9fafd',
+        borderColor: '#d8e2ef',
+        borderWidth: 1,
         transitionDuration: 0,
-        textStyle         : {
+        textStyle: {
             fontWeight: 500,
-            fontSize  : 12,
-            color     : getColor('dark')
+            fontSize: 12,
+            color: getColor('dark')
         },
-        formatter         : (params: any) => {
+        formatter: (params: any) => {
             let label = `<b>${params[0]?.axisValue}</b> <br>`;
             if (params[1]) label += `Today - ${currencyFormat(params[1]?.value)}<br>`;
             label += `Yesterday - ${currencyFormat(params[0].value)}`;
@@ -40,57 +41,57 @@ const getOptions = (labels: string[], data: any, status: string | Status, isDark
             return label;
         }
     },
-    xAxis  : {
-        show     : true,
-        type     : 'category',
-        data     : labels,
+    xAxis: {
+        show: true,
+        type: 'category',
+        data: labels,
         splitLine: {
-            show     : true,
+            show: true,
             lineStyle: {
                 color: rgbaColor('#fff', 0.1)
             },
         },
-        axisLine : {
+        axisLine: {
             lineStyle: {
                 color: rgbaColor('#fff', .1)
             }
         },
-        axisTick : {
-            show     : true,
-            length   : 10,
+        axisTick: {
+            show: true,
+            length: 10,
             lineStyle: {
                 color: rgbaColor('#fff', 0.1)
             }
         },
         axisLabel: {
-            color     : '#b6c1d2',
+            color: '#b6c1d2',
             fontWeight: 600,
-            fontSize  : 10,
-            margin    : 15,
-            interval  : window.innerWidth < 768 ? 'auto' : 0,
-            rotate    : '30',
+            fontSize: 10,
+            margin: 15,
+            interval: window.innerWidth < 768 ? 'auto' : 0,
+            rotate: '30',
         },
     },
-    yAxis  : {
-        type       : 'value',
+    yAxis: {
+        type: 'value',
         axisPointer: {
             show: false
         },
-        splitLine  : {
+        splitLine: {
             show: false
         },
-        axisLabel  : {
+        axisLabel: {
             show: false
         },
-        axisTick   : {show: false},
-        axisLine   : {show: false}
+        axisTick: {show: false},
+        axisLine: {show: false}
     },
-    series : [
+    series: [
         {
-            type     : 'line',
-            smooth   : true,
-            data     : data.yesterday[status]?.datasets ?? Array(data.yesterday["ALL"].datasets.length).fill(0),
-            symbol   : 'emptyCircle',
+            type: 'line',
+            smooth: true,
+            data: data.yesterday[status]?.datasets ?? Array(data.yesterday["ALL"].datasets.length).fill(0),
+            symbol: 'emptyCircle',
             itemStyle: {
                 color: isDark ? getColor('primary') : getColor('red')
             },
@@ -101,10 +102,10 @@ const getOptions = (labels: string[], data: any, status: string | Status, isDark
             },
         },
         {
-            type     : 'line',
-            smooth   : true,
-            data     : data.today[status]?.datasets ?? Array(data.today["ALL"].datasets.length).fill(0),
-            symbol   : 'emptyCircle',
+            type: 'line',
+            smooth: true,
+            data: data.today[status]?.datasets ?? Array(data.today["ALL"].datasets.length).fill(0),
+            symbol: 'emptyCircle',
             itemStyle: {
                 color: isDark ? getColor('primary') : getColor('white')
             },
@@ -115,35 +116,35 @@ const getOptions = (labels: string[], data: any, status: string | Status, isDark
             },
             areaStyle: {
                 color: {
-                    type      : 'linear',
-                    x         : 0,
-                    y         : 0,
-                    x2        : 0,
-                    y2        : 1,
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
                     colorStops: [
                         {
                             offset: 0,
-                            color : isDark
+                            color: isDark
                                 ? rgbaColor(getColor('primary'), 0.5)
                                 : rgbaColor('#fff', 0.5)
                         },
                         {
                             offset: 1,
-                            color : isDark
+                            color: isDark
                                 ? rgbaColor(getColor('primary'), 0)
                                 : rgbaColor('#fff', 0)
                         }
                     ]
                 }
             },
-            emphasis : {
+            emphasis: {
                 lineStyle: {
                     width: 2
                 }
             }
         }
     ],
-    grid   : {left: 20, right: 5, bottom: '25%', top: 0}
+    grid: {left: 20, right: 5, bottom: '25%', top: 0}
 });
 
 const Chart = ({data, labels, style, status}: PaymentChartType) => {

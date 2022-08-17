@@ -1,5 +1,4 @@
-import { SectionError } from 'components/Error';
-import { ComponentLoader } from 'components/Loader';
+import { ComponentLoader, SectionError } from '@nabcellent/sui-react';
 import CollectiveInvestmentsTable from 'components/tables/CollectiveInvestmentsTable';
 import { useGetRecentPersonalCollectiveInvestmentQuery } from 'features/savings/savingsApi';
 

@@ -1,11 +1,9 @@
-import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
 import { Card } from 'react-bootstrap';
 import { useGetGroupAccountsQuery } from 'features/group-accounts/groupAccountApi';
 import { Link } from 'react-router-dom';
 import { GroupAccount } from 'utils/types';
-import SidoohAccount from '../../components/SidoohAccount';
-import { DataTable, TableDate } from '@nabcellent/sui-react';
+import SidoohAccount from 'components/SidoohAccount';
+import { currencyFormat, DataTable, SectionError, SectionLoader, TableDate } from '@nabcellent/sui-react';
 
 const Index = () => {
     let {data: accounts, isLoading, isSuccess, isError, error} = useGetGroupAccountsQuery();
@@ -30,6 +28,11 @@ const Index = () => {
                         cell: ({row: {original}}: { row: { original: GroupAccount } }) => (
                             <Link to={`/groups/${original.group.id}`}>{original.group.name}</Link>
                         )
+                    },
+                    {
+                        accessorKey: 'balance',
+                        header: 'Balance',
+                        cell: ({row}: any) => currencyFormat(row.original.balance)
                     },
                     {
                         accessorKey: 'created_at',

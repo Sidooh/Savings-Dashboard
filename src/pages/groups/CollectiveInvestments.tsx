@@ -1,6 +1,5 @@
-import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
-import CollectiveInvestmentsTable from '../../components/tables/CollectiveInvestmentsTable';
+import { SectionError, SectionLoader } from '@nabcellent/sui-react';
+import CollectiveInvestmentsTable from 'components/tables/CollectiveInvestmentsTable';
 import { useGetGroupCollectiveInvestmentsQuery } from 'features/groups/groupsApi';
 
 const PersonalCollectiveInvestments = () => {

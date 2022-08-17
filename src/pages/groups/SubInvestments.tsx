@@ -1,9 +1,6 @@
-import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
+import { currencyFormat, DataTable, SectionError, SectionLoader, TableDate } from '@nabcellent/sui-react';
 import { Card } from 'react-bootstrap';
-import { DataTable, TableDate } from '@nabcellent/sui-react';
 import { SubInvestment } from 'utils/types';
-import { currencyFormat } from 'utils/helpers';
 import { useGetGroupSubInvestmentsQuery } from 'features/groups/groupsApi';
 import { Link } from 'react-router-dom';
 

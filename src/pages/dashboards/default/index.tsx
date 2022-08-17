@@ -1,4 +1,4 @@
-import { ComponentLoader } from 'components/Loader';
+import { ComponentLoader } from '@nabcellent/sui-react';
 import { lazy, Suspense } from 'react';
 import { Col, Row } from 'react-bootstrap';
 

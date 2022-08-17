@@ -1,7 +1,6 @@
-import { SectionError } from 'components/Error';
+import { ComponentLoader, SectionError } from '@nabcellent/sui-react';
 import { useGetRecentPersonalAccountTransactionQuery } from 'features/savings/savingsApi';
 import SavingsTransactionTable from 'components/tables/SavingsTransactionTable';
-import { ComponentLoader } from '../../../components/Loader';
 
 const RecentPersonalTransactions = () => {
     let {data: transactions, isLoading, isSuccess, isError, error} = useGetRecentPersonalAccountTransactionQuery();

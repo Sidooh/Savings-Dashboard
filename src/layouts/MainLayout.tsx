@@ -5,10 +5,7 @@ import NavbarVertical from 'components/navbar/vertical/NavbarVertical';
 import classNames from 'classnames';
 import { useAppSelector } from 'app/hooks';
 import { RootState } from 'app/store';
-import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
-import { ErrorBoundary } from 'components/ErrorBoundary';
-import { Footer } from '@nabcellent/sui-react';
+import { ErrorBoundary, Footer, SectionError, SectionLoader } from '@nabcellent/sui-react';
 import { CONFIG } from '../config';
 
 const MainLayout = () => {

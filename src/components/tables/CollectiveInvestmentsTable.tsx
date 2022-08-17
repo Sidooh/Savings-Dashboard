@@ -1,7 +1,6 @@
-import { CollectiveInvestment } from '../../utils/types';
+import { CollectiveInvestment } from 'utils/types';
 import { Card } from 'react-bootstrap';
-import { currencyFormat } from '../../utils/helpers';
-import { DataTable, TableDate } from '@nabcellent/sui-react';
+import { currencyFormat, DataTable, TableDate } from '@nabcellent/sui-react';
 
 const CollectiveInvestmentsTable = ({title, investments}: { title: string, investments: CollectiveInvestment[] }) => {
     return (

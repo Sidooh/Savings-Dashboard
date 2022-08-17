@@ -1,8 +1,5 @@
-import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
+import { currencyFormat, DataTable, SectionError, SectionLoader, StatusChip } from '@nabcellent/sui-react';
 import { Card } from 'react-bootstrap';
-import { DataTable, StatusChip } from '@nabcellent/sui-react';
-import { currencyFormat } from 'utils/helpers';
 import { useGetGroupsQuery } from 'features/groups/groupsApi';
 
 const Index = () => {

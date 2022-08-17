@@ -1,10 +1,8 @@
-import { SectionError } from 'components/Error';
-import { ComponentLoader } from 'components/Loader';
+import { Badge, ComponentLoader, SectionError } from '@nabcellent/sui-react';
 import { Card, Col, Row } from "react-bootstrap";
 import { useGetDashboardSummariesQuery } from "features/savings/savingsApi";
 import CardBgCorner from 'components/CardBgCorner';
 import CountUp from 'react-countup';
-import { Badge } from '@nabcellent/sui-react';
 
 const Board = ({
     title,
@@ -14,22 +12,20 @@ const Board = ({
     currency = false
 }: { title: string, today: number, total: number, bgCorner?: 1 | 2 | 3 | 4 | 5, currency?: boolean }) => (
     <Col lg={3}>
-        <Card style={{'height': '150px'}}>
+        <Card>
             <CardBgCorner corner={bgCorner}/>
-            <Card.Body>
-                <Row className="h-100">
-                    <Col className="d-flex flex-column align-items-start justify-content-between">
-                        <h6 className="mb-md-0 mb-lg-2">{title}</h6>
-                        <div>
-                            <h4 className="fw-normal text-700 m-0">
-                                <CountUp end={total} separator="," prefix={currency ? 'KES ' : ''}/>
-                            </h4>
-                            <Badge bg="primary" className={`fw-bold fs-9 mt-2 mb-3`} pill soft>
-                                <CountUp end={today} separator="," prefix={currency ? 'KES ' : ''}/>
-                            </Badge>
-                        </div>
-                    </Col>
-                </Row>
+            <Card.Body as={Row}>
+                <Col className="d-md-flex d-lg-block flex-between-center">
+                    <h6 className="mb-md-0 mb-lg-3">{title}</h6>
+                    <h5 className="fw-normal text-700 m-0">
+                        <CountUp end={total} separator="," prefix={currency ? 'KES ' : ''}/>
+                    </h5>
+                </Col>
+                <Col lg={'auto'} className={'d-flex align-items-start justify-content-end'}>
+                    <Badge bg={currency ? "success" : 'primary'} pill>
+                        <CountUp end={today} separator="," prefix={currency ? 'KES ' : ''}/>
+                    </Badge>
+                </Col>
             </Card.Body>
         </Card>
     </Col>
