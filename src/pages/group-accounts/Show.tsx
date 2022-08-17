@@ -21,7 +21,7 @@ const Show = () => {
     return (
         <>
             <Card className={'mb-3'}>
-                <CardBgCorner corner={3} />
+                <CardBgCorner corner={4} />
                 <Card.Header>
                     <Row>
                         <Col>
@@ -49,7 +49,7 @@ const Show = () => {
             </Card>
 
             <Card className={'mb-3'}>
-                <CardBgCorner corner={2} />
+                <CardBgCorner corner={4} />
                 <Card.Header className="pb-0"><h5>Details</h5></Card.Header>
                 <Card.Body as={Row} className={'position-relative'}>
                     <Col lg xxl={5}>

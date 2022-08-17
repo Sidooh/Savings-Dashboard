@@ -49,7 +49,7 @@ const Show = () => {
             </Card>
 
             <Card className={'mb-3'}>
-                <CardBgCorner corner={2} />
+                <CardBgCorner corner={3} />
                 <Card.Header className="d-flex align-items-center justify-content-between">
                     <h5>Details</h5>
                     <StatusChip status={pA.status} soft={false} />

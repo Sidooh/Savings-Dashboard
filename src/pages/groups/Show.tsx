@@ -20,7 +20,7 @@ const Show = () => {
     return (
         <>
             <Card className={'mb-3'}>
-                <CardBgCorner corner={3}/>
+                <CardBgCorner corner={2}/>
                 <Card.Header>
                     <Row>
                         <Col><h5 className="mb-2">{group.name}</h5></Col>
@@ -43,7 +43,10 @@ const Show = () => {
 
             <Card className={'mb-3'}>
                 <CardBgCorner corner={2}/>
-                <Card.Header className="pb-0"><h5>Details</h5></Card.Header>
+                <Card.Header className="d-flex align-items-center justify-content-between">
+                    <h5>Details</h5>
+                    <StatusChip status={group.status} soft={false} />
+                </Card.Header>
                 <Card.Body as={Row}>
                     <Col lg xxl={5}>
                         <Row>
