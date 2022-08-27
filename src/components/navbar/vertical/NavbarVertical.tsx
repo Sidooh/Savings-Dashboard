@@ -1,11 +1,9 @@
 import { Fragment, useEffect } from 'react';
 import { Col, Nav, Navbar, Row } from 'react-bootstrap';
-import Flex from 'components/Flex';
-import Logo from 'components/Logo';
+import { capitalize, Flex, Logo } from '@nabcellent/sui-react';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
 import ToggleButton from './ToggleButton';
 import routes from 'routes';
-import { capitalize } from 'utils/helpers';
 import { IMAGES } from 'constants/images';
 import { useAppSelector } from 'app/hooks';
 import { RootState } from 'app/store';
@@ -65,7 +63,7 @@ const NavbarVertical = () => {
                 variant="light">
             <Flex alignItems="center">
                 <ToggleButton/>
-                <Logo at="navbar-vertical" width={70}/>
+                <Logo src={IMAGES.logos.sidooh} at="navbar-vertical" width={70}/>
             </Flex>
             <Navbar.Collapse in={showBurgerMenu} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
                              style={{

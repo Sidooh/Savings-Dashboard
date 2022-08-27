@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { SectionError } from 'components/Error';
-import { ComponentLoader } from 'components/Loader';
+import { ComponentLoader, SectionError } from '@nabcellent/sui-react';
 import { useGetDashboardChartDataQuery } from 'features/savings/savingsApi';
-import Flex from 'components/Flex';
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSync } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +18,8 @@ const ChartWrapper = () => {
 
     return (
         <Card className="rounded-3 overflow-hidden h-100">
-            <Card.Body className="bg-line-chart-gradient" as={Flex} justifyContent="between" direction="column">
+            <Card.Body className="d-flex flex-column justify-content-between"
+                       style={{backgroundImage: 'linear-gradient(-45deg, #0F1B4C, #624900)'}}>
                 <Row className="align-items-center g-0 mb-3 justify-content-end">
                     <Col xs="auto" className="d-none d-sm-flex align-items-center">
                         <button className="btn btn-sm btn-outline-light me-2 refresh-chart" type="button"

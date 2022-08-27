@@ -1,5 +1,5 @@
 import { CONFIG } from 'config';
-import PhoneChip from 'components/chips/PhoneChip';
+import { PhoneChip } from '@nabcellent/sui-react';
 import { Account } from '../utils/types';
 
 const SidoohAccount = ({account}: { account: Account }) => {

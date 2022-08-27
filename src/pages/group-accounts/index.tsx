@@ -1,12 +1,11 @@
-import { SectionError } from 'components/Error';
-import { SectionLoader } from 'components/Loader';
 import { Card } from 'react-bootstrap';
-import DataTable from 'components/datatable';
 import { useGetGroupAccountsQuery } from 'features/group-accounts/groupAccountApi';
 import { Link } from 'react-router-dom';
 import { GroupAccount } from 'utils/types';
-import TableDate from '../../components/TableDate';
-import SidoohAccount from '../../components/SidoohAccount';
+import SidoohAccount from 'components/SidoohAccount';
+import { currencyFormat, DataTable, SectionError, SectionLoader, StatusChip, TableDate } from '@nabcellent/sui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 const Index = () => {
     let {data: accounts, isLoading, isSuccess, isError, error} = useGetGroupAccountsQuery();
@@ -33,10 +32,27 @@ const Index = () => {
                         )
                     },
                     {
+                        accessorKey: 'balance',
+                        header: 'Balance',
+                        cell: ({row}: any) => currencyFormat(row.original.balance)
+                    },
+                    {
                         accessorKey: 'created_at',
                         header: 'Created',
                         cell: ({row}: any) => <TableDate date={row.original.created_at}/>
                     },
+                    {
+                        accessorKey: 'status',
+                        header: 'Status',
+                        cell: ({row}: any) => <StatusChip status={row.original.status}/>
+                    },
+                    {
+                        id: 'actions',
+                        header: '',
+                        cell: ({ row }: any) => (
+                            <Link to={`/group-accounts/${row.original.id}`}><FontAwesomeIcon icon={faEye}/></Link>
+                        )
+                    }
                 ]}/>
             </Card.Body>
         </Card>
