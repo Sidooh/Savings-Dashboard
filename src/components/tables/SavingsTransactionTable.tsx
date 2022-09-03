@@ -5,6 +5,7 @@ import { currencyFormat, DataTable, StatusChip, TableDate } from '@nabcellent/su
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
+import moment from 'moment';
 
 type SavingsTransactionTableProps = {
     title: string,
@@ -36,34 +37,36 @@ const SavingsTransactionTable = ({
         {
             accessorKey: 'status',
             header: 'Status',
-            cell: ({ row }: any) => <StatusChip status={row.original.status} />
+            cell: ({ row }: any) => <StatusChip status={row.original.status}/>
         },
         {
             accessorKey: 'created_at',
             header: 'Created',
-            cell: ({ row }: any) => <TableDate date={row.original.created_at} />
+            accessorFn: (row: PersonalAccountTransaction) => moment(row.created_at).calendar(),
+            cell: ({ row }: any) => <TableDate date={row.original.created_at}/>
         },
         {
             id: 'actions',
             header: '',
             cell: ({ row }: any) => (
                 <Link to={`/${entity}/transactions/${row.original.id}`}>
-                    <FontAwesomeIcon icon={faEye} />
+                    <FontAwesomeIcon icon={faEye}/>
                 </Link>
             )
         }
-    ]
+    ];
 
     if (showCustomer) columns.unshift({
         accessorKey: 'customer',
         header: 'Customer',
-        cell: ({ row }: any) => <SidoohAccount account={row.original.account} />
-    })
+        accessorFn: (row: PersonalAccountTransaction) => `${row?.account?.phone}: ${row?.account?.user?.name}`,
+        cell: ({ row }: any) => <SidoohAccount account={row.original.account}/>
+    });
 
     return (
         <Card className={'mb-3'}>
             <Card.Body>
-                <DataTable title={title} data={transactions} columns={columns} />
+                <DataTable title={title} data={transactions} columns={columns}/>
             </Card.Body>
         </Card>
     );
