@@ -1,6 +1,7 @@
-import { CollectiveInvestment } from 'utils/types';
+import { CollectiveInvestment, PersonalAccountTransaction } from 'utils/types';
 import { Card } from 'react-bootstrap';
 import { currencyFormat, DataTable, TableDate } from '@nabcellent/sui-react';
+import moment from 'moment/moment';
 
 const CollectiveInvestmentsTable = ({title, investments}: { title: string, investments: CollectiveInvestment[] }) => {
     return (
@@ -31,6 +32,7 @@ const CollectiveInvestmentsTable = ({title, investments}: { title: string, inves
                     {
                         accessorKey: 'created_at',
                         header: 'Created',
+                        accessorFn: (row: PersonalAccountTransaction) => moment(row.created_at).calendar(),
                         cell: ({row}: any) => <TableDate date={row.original.created_at}/>
                     },
                 ]}/>
