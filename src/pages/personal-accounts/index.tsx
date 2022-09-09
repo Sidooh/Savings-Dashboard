@@ -5,6 +5,7 @@ import SidoohAccount from 'components/SidoohAccount';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
+import { logger } from 'utils/logger';
 
 const Index = () => {
     let {data: accounts, isLoading, isSuccess, isError, error} = useGetPersonalAccountsQuery();
@@ -12,7 +13,7 @@ const Index = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !accounts) return <SectionLoader/>;
 
-    console.log(accounts);
+    logger.log(accounts);
 
     return (
         <Card className={'mb-3'}>

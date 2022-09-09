@@ -3,6 +3,7 @@ import { currencyFormat, DataTable, SectionError, SectionLoader, TableDate } fro
 import { Card } from 'react-bootstrap';
 import SidoohAccount from 'components/SidoohAccount';
 import { SubInvestment } from 'utils/types';
+import { logger } from 'utils/logger';
 
 const SubInvestments = () => {
     let {data: investments, isLoading, isSuccess, isError, error} = useGetPersonalSubInvestmentsQuery();
@@ -10,7 +11,7 @@ const SubInvestments = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !investments) return <SectionLoader/>;
 
-    console.log(investments);
+    logger.log(investments);
 
     return (
         <Card className={'mb-3'}>

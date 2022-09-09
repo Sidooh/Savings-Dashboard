@@ -5,6 +5,7 @@ import { Card, Col, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSync } from '@fortawesome/free-solid-svg-icons';
 import Chart from './Chart';
+import { logger } from 'utils/logger';
 
 const ChartWrapper = () => {
     const {data, isError, error, isLoading, isSuccess} = useGetDashboardChartDataQuery();
@@ -14,7 +15,7 @@ const ChartWrapper = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !data) return <ComponentLoader/>;
 
-    console.log(data);
+    logger.log(data);
 
     return (
         <Card className="rounded-3 overflow-hidden h-100">

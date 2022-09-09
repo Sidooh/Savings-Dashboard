@@ -728,13 +728,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nabcellent/sui-react@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "@nabcellent/sui-react@npm:2.2.3"
+"@nabcellent/sui-react@npm:^2.4.13":
+  version: 2.4.13
+  resolution: "@nabcellent/sui-react@npm:2.4.13"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 87b85b09fb635c8235c01733ad3b3f69a5e1b224e82c986d778297a8f2cb6903a3ff5cc595debc6d638eefe2c1be72e7bed181e75d80201b265b06253d0bba36
+  checksum: 0d6292a1f5cb1daa3920fdc9eb2d678e03cbaea1be089264a248bb2e56fd216297f56fbb02633102ce94ff2c717f3e29582b99eea97a5d3bd1fed3ba0c775e99
   languageName: node
   linkType: hard
 
@@ -855,6 +855,13 @@ __metadata:
   version: 4.14.182
   resolution: "@types/lodash@npm:4.14.182"
   checksum: 7dd137aa9dbabd632408bd37009d984655164fa1ecc3f2b6eb94afe35bf0a5852cbab6183148d883e9c73a958b7fec9a9bcf7c8e45d41195add6a18c34958209
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.7.16":
+  version: 18.7.16
+  resolution: "@types/node@npm:18.7.16"
+  checksum: 01a3d35c764a3f0e7370b56e1ad4203731131883c65784e020009014171b3f53c4649cde6c7aa4f1026b907ee87ef6ae6ece2bc518151dc7b81100fe8b1db3ad
   languageName: node
   linkType: hard
 
@@ -2658,8 +2665,9 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.1.2
     "@fortawesome/react-fontawesome": ^0.2.0
     "@mui/material": ^5.9.3
-    "@nabcellent/sui-react": ^2.2.3
+    "@nabcellent/sui-react": ^2.4.13
     "@reduxjs/toolkit": ^1.8.3
+    "@types/node": ^18.7.16
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
     "@types/react-router-dom": ^5.3.3

@@ -3,6 +3,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { useGetDashboardSummariesQuery } from "features/savings/savingsApi";
 import CardBgCorner from 'components/CardBgCorner';
 import CountUp from 'react-countup';
+import { logger } from 'utils/logger';
 
 const Board = ({
     title,
@@ -37,7 +38,7 @@ const Summaries = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !stats) return <ComponentLoader/>;
 
-    console.log(stats);
+    logger.log(stats);
 
     return (
         <>

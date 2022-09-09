@@ -8,6 +8,7 @@ import moment from 'moment';
 import CardBgCorner from 'components/CardBgCorner';
 import SavingsTransactionTable from "components/tables/SavingsTransactionTable";
 import { useGetGroupAccountQuery } from 'features/group-accounts/groupAccountApi';
+import { logger } from 'utils/logger';
 
 const Show = () => {
     const { id } = useParams();
@@ -16,7 +17,7 @@ const Show = () => {
     if (isError) return <SectionError error={error} />;
     if (isLoading || !isSuccess || !gA) return <SectionLoader />;
 
-    console.log(gA);
+    logger.log(gA);
 
     return (
         <>
