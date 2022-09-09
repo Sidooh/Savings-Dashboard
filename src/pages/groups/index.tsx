@@ -4,6 +4,7 @@ import { useGetGroupsQuery } from 'features/groups/groupsApi';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
+import { logger } from 'utils/logger';
 
 const Index = () => {
     let {data: groups, isLoading, isSuccess, isError, error} = useGetGroupsQuery();
@@ -11,7 +12,7 @@ const Index = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !groups) return <SectionLoader/>;
 
-    console.log(groups);
+    logger.log(groups);
 
     return (
         <Card className={'mb-3'}>

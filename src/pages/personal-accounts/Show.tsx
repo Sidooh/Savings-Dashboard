@@ -8,6 +8,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import moment from 'moment';
 import CardBgCorner from '../../components/CardBgCorner';
 import SavingsTransactionTable from "components/tables/SavingsTransactionTable";
+import { logger } from 'utils/logger';
 
 const Show = () => {
     const { id } = useParams();
@@ -16,7 +17,7 @@ const Show = () => {
     if (isError) return <SectionError error={error} />;
     if (isLoading || !isSuccess || !pA) return <SectionLoader />;
 
-    console.log(pA);
+    logger.log(pA);
 
     return (
         <>

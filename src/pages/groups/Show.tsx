@@ -7,6 +7,7 @@ import moment from 'moment';
 import CardBgCorner from 'components/CardBgCorner';
 import { useGetGroupQuery } from 'features/groups/groupsApi';
 import SidoohAccount from '../../components/SidoohAccount';
+import { logger } from 'utils/logger';
 
 const Show = () => {
     const { id } = useParams();
@@ -15,7 +16,7 @@ const Show = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !group) return <SectionLoader/>;
 
-    console.log(group);
+    logger.log(group);
 
     return (
         <>
