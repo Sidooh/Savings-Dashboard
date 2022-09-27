@@ -16,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.9.3",
-    "@nabcellent/sui-react": "^2.4.13",
+    "@nabcellent/sui-react": "^2.5.4",
     "@reduxjs/toolkit": "^1.8.3",
     "echarts": "^5.3.3",
     "formik": "^2.2.9",
