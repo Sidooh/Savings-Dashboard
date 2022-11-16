@@ -56,6 +56,8 @@ const Transaction = ({ title, transaction }: TransactionProps) => {
                     </Row>
                 </Card.Body>
             </Card>
+
+            {/*<TransactionPayment payment={transaction}/>*/}
         </>
     );
 };
