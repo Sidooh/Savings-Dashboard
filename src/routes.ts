@@ -1,4 +1,4 @@
-import { RouteType } from "utils/types";
+import { RouteType } from "@nabcellent/sui-react";
 import {
     faCoins,
     faGlobe,
