@@ -1,27 +1,4 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Status } from './enums';
-import { OverridableStringUnion } from '@mui/types';
-import { ChipPropsColorOverrides } from '@mui/material/Chip/Chip';
-
-export type RouteChildType = {
-    name: string
-    active: boolean
-    icon?: IconProp
-    to?: string
-    exact?: boolean
-    badge?: {
-        text?: string
-        type?: OverridableStringUnion<'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',
-            ChipPropsColorOverrides>
-    }
-    children?: RouteChildType[]
-}
-
-export type RouteType = {
-    label: string
-    labelDisable?: boolean
-    children: RouteChildType[]
-}
 
 export interface ApiResponse<T> {
     result: 1 | 0;
@@ -57,7 +34,7 @@ export type Transaction = Model & {
     account?: Account
 }
 
-export type Payment = {
+export type Payment = Model & {
     payment_id: number
     amount: number
     type: string

@@ -4,16 +4,13 @@ import { Collapse, Nav } from 'react-bootstrap';
 import classNames from 'classnames';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { setTheme } from 'features/theme/themeSlice';
-import { RouteChildType } from 'utils/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Chip } from '@mui/material';
-import { Flex } from '@nabcellent/sui-react';
+import { Flex, RouteChildType } from '@nabcellent/sui-react';
 
 const NavbarVerticalMenuItem = ({route}: { route: RouteChildType }) => (
     <Flex alignItems="center">
         {route.icon && <span className="nav-link-icon"><FontAwesomeIcon icon={route.icon}/></span>}
         <span className="nav-link-text ps-1">{route.name}</span>
-        {route.badge && <Chip label={route.badge.text} color={route.badge.type} className={'ms-2'}/>}
     </Flex>
 );
 

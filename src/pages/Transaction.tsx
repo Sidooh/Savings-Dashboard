@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Card, Col, Row } from 'react-bootstrap';
 import { PersonalAccountTransaction } from '../utils/types';
 import { CONFIG } from '../config';
+import { logger } from 'utils/logger';
 
 type TransactionProps = {
     title: 'Group Account' | 'Personal Account',
@@ -11,7 +12,7 @@ type TransactionProps = {
 }
 
 const Transaction = ({ title, transaction }: TransactionProps) => {
-    console.log(transaction);
+    logger.log(transaction);
 
     return (
         <>
@@ -55,6 +56,8 @@ const Transaction = ({ title, transaction }: TransactionProps) => {
                     </Row>
                 </Card.Body>
             </Card>
+
+            {/*<TransactionPayment payment={transaction}/>*/}
         </>
     );
 };

@@ -1,6 +1,7 @@
 import { ComponentLoader, SectionError } from '@nabcellent/sui-react';
 import CollectiveInvestmentsTable from 'components/tables/CollectiveInvestmentsTable';
 import { useGetRecentPersonalCollectiveInvestmentQuery } from 'features/savings/savingsApi';
+import { logger } from 'utils/logger';
 
 const RecentPersonalCollectiveInvestments = () => {
     let {data: investments, isLoading, isSuccess, isError, error} = useGetRecentPersonalCollectiveInvestmentQuery();
@@ -8,7 +9,7 @@ const RecentPersonalCollectiveInvestments = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !investments) return <ComponentLoader/>;
 
-    console.log(investments);
+    logger.log(investments);
 
     return <CollectiveInvestmentsTable title={'Recent Personal Collective Investments'} investments={investments}/>;
 };

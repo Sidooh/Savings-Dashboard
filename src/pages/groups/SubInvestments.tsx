@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap';
 import { SubInvestment } from 'utils/types';
 import { useGetGroupSubInvestmentsQuery } from 'features/groups/groupsApi';
 import { Link } from 'react-router-dom';
+import { logger } from 'utils/logger';
 
 const SubInvestments = () => {
     let {data: investments, isLoading, isSuccess, isError, error} = useGetGroupSubInvestmentsQuery();
@@ -10,7 +11,7 @@ const SubInvestments = () => {
     if (isError) return <SectionError error={error}/>;
     if (isLoading || !isSuccess || !investments) return <SectionLoader/>;
 
-    console.log(investments);
+    logger.log(investments);
 
     return (
         <Card className={'mb-3'}>
