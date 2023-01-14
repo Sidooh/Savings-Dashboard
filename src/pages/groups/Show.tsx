@@ -51,37 +51,37 @@ const Show = () => {
                 <Card.Body as={Row}>
                     <Col lg xxl={5}>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">ID</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">ID</p></Col>
                             <Col>#{group.id}</Col>
                         </Row>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Type</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Type</p></Col>
                             <Col>{group.type}</Col>
                         </Row>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Duration</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Duration</p></Col>
                             <Col>{group.duration ?? 'N/A'}</Col>
                         </Row>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Frequency</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Frequency</p></Col>
                             <Col>{group.frequency ?? 'N/A'}</Col>
                         </Row>
                     </Col>
                     <Col lg xxl={5} className="">
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Balance</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Balance</p></Col>
                             <Col>{currencyFormat(group.balance)}</Col>
                         </Row>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Interest</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Interest</p></Col>
                             <Col>{currencyFormat(group.interest)}</Col>
                         </Row>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Target Amount</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Target Amount</p></Col>
                             <Col>{currencyFormat(group.target_amount)}</Col>
                         </Row>
                         <Row>
-                            <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Frequency Amount</p></Col>
+                            <Col xs={5} sm={4} className="pe-0"><p className="fw-bold fs--1 mb-0">Frequency Amount</p></Col>
                             <Col>{currencyFormat(group.frequency_amount)}</Col>
                         </Row>
                     </Col>
