@@ -34,7 +34,7 @@ const Show = () => {
                             </h5>
                         </Col>
                         <Col sm={'auto'} className={'d-none d-sm-block'}>
-                            <h6 className={'text-600 text-uppercase'}>Customer <FontAwesomeIcon icon={faUser} /></h6>
+                            <h6 className={'text-600 text-uppercase'}>Personal Account <FontAwesomeIcon icon={faUser} /></h6>
                         </Col>
                     </Row>
                 </Card.Header>
@@ -42,7 +42,7 @@ const Show = () => {
                     <div className="d-flex align-items-center">
                         <FontAwesomeIcon icon={faUser} className={'text-primary me-2'} />
                         <div className="flex-1">
-                            <p className={'mb-0'}>This Personal Account Was Created On:</p>
+                            <p className={'mb-0'}>Created On:</p>
                             <p className={'fs--1 mb-0 text-600'}>{moment(pA.created_at).format('MMM Do Y, @hh:mm A')}</p>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const Show = () => {
                 </Card.Body>
             </Card>
 
-            <SavingsTransactionTable title="Transactions" transactions={pA.transactions} entity="personal-accounts" showCustomer={false} />
+            <SavingsTransactionTable title="Transactions" transactions={pA.transactions} entity="personal-accounts" showAccount={false} />
         </>
     );
 };

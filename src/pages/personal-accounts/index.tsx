@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
 import { logger } from 'utils/logger';
+import { PersonalAccount } from "../../utils/types";
 
 const Index = () => {
     let {data: accounts, isLoading, isSuccess, isError, error} = useGetPersonalAccountsQuery();
@@ -20,8 +21,9 @@ const Index = () => {
             <Card.Body>
                 <DataTable title={'Personal Accounts'} data={accounts} columns={[
                     {
-                        accessorKey: 'customer',
-                        header: 'Customer',
+                        accessorKey: 'account',
+                        accessorFn: (row: PersonalAccount) => `${row.account?.phone}: ${row.account?.user?.name}`,
+                        header: 'Account',
                         cell: ({row}: any) => <SidoohAccount account={row.original.account}/>
                     },
                     {
