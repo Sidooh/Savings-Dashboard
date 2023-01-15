@@ -11,14 +11,14 @@ type SavingsTransactionTableProps = {
     title: string,
     transactions: PersonalAccountTransaction[],
     entity: 'personal-accounts' | 'group-accounts'
-    showCustomer?: boolean
+    showAccount?: boolean
 }
 
 const SavingsTransactionTable = ({
     title,
     transactions,
     entity,
-    showCustomer = true
+    showAccount = true
 }: SavingsTransactionTableProps) => {
     const columns = [
         {
@@ -56,9 +56,9 @@ const SavingsTransactionTable = ({
         }
     ];
 
-    if (showCustomer) columns.unshift({
-        accessorKey: 'customer',
-        header: 'Customer',
+    if (showAccount) columns.unshift({
+        accessorKey: 'account',
+        header: 'Account',
         accessorFn: (row: PersonalAccountTransaction) => `${row?.account?.phone}: ${row?.account?.user?.name}`,
         cell: ({ row }: any) => <SidoohAccount account={row.original.account}/>
     });

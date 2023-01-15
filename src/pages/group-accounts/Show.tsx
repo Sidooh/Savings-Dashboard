@@ -88,7 +88,7 @@ const Show = () => {
                 </Card.Body>
             </Card>
 
-            <SavingsTransactionTable title="Transactions" transactions={gA.transactions} entity="personal-accounts" showCustomer={false} />
+            <SavingsTransactionTable title="Transactions" transactions={gA.transactions} entity="personal-accounts" showAccount={false} />
         </>
     );
 };
