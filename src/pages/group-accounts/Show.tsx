@@ -54,7 +54,7 @@ const Show = () => {
                 <Card.Header className="pb-0"><h5>Details</h5></Card.Header>
                 <Card.Body as={Row} className={'position-relative'}>
                     <Col lg xxl={5}>
-                        <h6 className="fw-semi-bold ls mb-3 text-uppercase">Group Account Information</h6>
+                        <h6 className="fw-semi-bold ls mb-3 text-uppercase">Group Account</h6>
                         <Row>
                             <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">ID</p></Col>
                             <Col>#{gA.id}</Col>
@@ -69,7 +69,7 @@ const Show = () => {
                         </Row>
                     </Col>
                     <Col lg xxl={5} className="mt-4 mt-lg-0">
-                        <h6 className="fw-semi-bold ls mb-3 text-uppercase">Group Information</h6>
+                        <h6 className="fw-semi-bold ls mb-3 text-uppercase">Group</h6>
                         <Row>
                             <Col xs={5} sm={4} className="pe-0"><p className="fw-semi-bold mb-0">Name</p></Col>
                             <Col>

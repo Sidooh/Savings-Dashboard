@@ -29,7 +29,7 @@ export const groupAccountApi = createApi({
             providesTags: ['GroupAccount']
         }),
         getGroupAccountTransactions: builder.query<GroupAccountTransaction[], void>({
-            query: () => '/transactions/?with_relations=account',
+            query: () => '/transactions/?with_relations=account,group',
             transformResponse: (response: { data: GroupAccountTransaction[] }) => response.data,
             providesTags: ['GroupAccountTransaction']
         }),
