@@ -1,4 +1,4 @@
-import { Status } from './enums';
+import { Status } from "@nabcellent/sui-react";
 
 export interface ApiResponse<T> {
     result: 1 | 0;

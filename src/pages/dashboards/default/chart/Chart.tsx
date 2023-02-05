@@ -5,8 +5,7 @@ import { getColor } from 'utils/helpers';
 import { useAppSelector } from 'app/hooks';
 import { RootState } from 'app/store';
 import ECharts from 'components/echarts';
-import { Status } from 'utils/enums';
-import { currencyFormat, rgbaColor } from '@nabcellent/sui-react';
+import { currencyFormat, rgbaColor, Status } from '@nabcellent/sui-react';
 
 type PaymentChartType = {
     data: any
