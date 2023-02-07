@@ -1,7 +1,7 @@
 import { PersonalAccountTransaction } from 'utils/types';
 import { Card } from 'react-bootstrap';
 import SidoohAccount from 'components/SidoohAccount';
-import { currencyFormat, DataTable, StatusChip, TableDate } from '@nabcellent/sui-react';
+import { currencyFormat, DataTable, StatusChip, TableDate, TransactionTypeChip } from '@nabcellent/sui-react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
@@ -24,6 +24,7 @@ const SavingsTransactionTable = ({
         {
             accessorKey: 'type',
             header: 'Type',
+            cell: ({ row }: any) => <TransactionTypeChip type={row.original.type}/>
         },
         {
             accessorKey: 'description',
