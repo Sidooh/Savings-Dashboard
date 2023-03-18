@@ -41,33 +41,31 @@ const Summaries = () => {
     logger.log(stats);
 
     return (
-        <>
-            <Row className="g-3">
-                <Col lg={8}>
-                    <Row className={'g-3'}>
-                        <Board title={'Personal Accounts'} today={stats.count_personal_accounts_today}
-                               total={stats.count_personal_accounts}/>
-                        <Board title={'Group Accounts'} today={stats.count_group_accounts_today}
-                               total={stats.count_group_accounts} bgCorner={2}/>
-                        <Board title={'Personal Accounts'} today={stats.amount_personal_accounts_today}
-                               total={stats.amount_personal_accounts} bgCorner={3} currency/>
-                        <Board title={'Group Accounts'} today={stats.amount_group_accounts_today}
-                               total={stats.amount_group_accounts} currency/>
-                    </Row>
-                </Col>
-                <Col>
-                    <Card className={'h-100 bg-line-chart-gradient'}>
-                        <CardBgCorner/>
-                        <Card.Body className={'position-relative d-flex flex-column justify-content-center'}>
-                            <h5 className="text-light mb-3">{'Savings Float Balance'}</h5>
-                            <h4 className="fw-normal text-white m-0">
-                                <CountUp end={stats.savings_float_balance} separator="," prefix={'KES '}/>
-                            </h4>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </>
+        <Row className="g-3">
+            <Col lg={8}>
+                <Row className={'g-3'}>
+                    <Board title={'Personal Accounts'} today={stats.count_personal_accounts_today}
+                           total={stats.count_personal_accounts}/>
+                    <Board title={'Group Accounts'} today={stats.count_group_accounts_today}
+                           total={stats.count_group_accounts} bgCorner={2}/>
+                    <Board title={'Personal Accounts'} today={stats.amount_personal_accounts_today}
+                           total={stats.amount_personal_accounts} bgCorner={3} currency/>
+                    <Board title={'Group Accounts'} today={stats.amount_group_accounts_today}
+                           total={stats.amount_group_accounts} currency/>
+                </Row>
+            </Col>
+            <Col>
+                <Card className={'h-100 bg-line-chart-gradient'}>
+                    <CardBgCorner/>
+                    <Card.Body className={'position-relative d-flex flex-column justify-content-center'}>
+                        <h5 className="text-light mb-3">{'Savings Float Balance'}</h5>
+                        <h4 className="fw-normal text-white m-0">
+                            <CountUp end={stats.savings_float_balance} separator="," prefix={'KES '}/>
+                        </h4>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
     );
 };
 
