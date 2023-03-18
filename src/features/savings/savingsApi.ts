@@ -11,6 +11,7 @@ type DashboardSummariesData = {
     count_group_accounts_today: number
     count_personal_accounts: number
     count_personal_accounts_today: number
+    savings_float_balance: number
 }
 type ChartData = {
     labels: string[],
