@@ -18,7 +18,7 @@ const TopNavRightSideNavItem = () => {
             <Nav.Item as={'li'}>
                 <Nav.Link className="px-2 theme-control-toggle"
                           onClick={() => dispatch(setTheme({key: 'isDark', value: !isDark}))}>
-                    <Tooltip title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}>
+                    <Tooltip title={isDark ? 'Switch to light theme' : 'Switch to dark theme'} placement={'start'}>
                         <div className="theme-control-toggle-label">
                             <FontAwesomeIcon icon={isDark ? faSun : faMoon} className="fs-0"/>
                         </div>
