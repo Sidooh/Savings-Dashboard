@@ -1,4 +1,4 @@
-import { CSSProperties, memo } from 'react';
+import { CSSProperties } from 'react';
 import _ from 'lodash';
 import { getColor } from 'utils/helpers';
 import BaseECharts from './BaseECharts';
@@ -51,4 +51,4 @@ const ECharts = ({echarts, options, ...rest}: BasicEChartsType) => {
     );
 };
 
-export default memo(ECharts);
+export default ECharts;

@@ -5,6 +5,7 @@ ARG VITE_ACCOUNTS_API_URL
 ARG VITE_SAVINGS_API_URL
 
 ARG VITE_ACCOUNTS_DASHBOARD_URL
+ARG VITE_MERCHANTS_DASHBOARD_URL
 ARG VITE_PRODUCTS_DASHBOARD_URL
 ARG VITE_PAYMENTS_DASHBOARD_URL
 ARG VITE_NOTIFY_DASHBOARD_URL
@@ -13,7 +14,6 @@ ARG VITE_USSD_DASHBOARD_URL
 WORKDIR /app
 
 COPY ["package.json", "yarn.lock", ".yarnrc.yml", "vite.config.ts", "tsconfig.json", "tsconfig.node.json", "index.html", "./"]
-COPY [".yarn/plugins/", "./.yarn/plugins/"]
 COPY [".yarn/releases/", "./.yarn/releases/"]
 COPY ["src/", "./src/"]
 
