@@ -13,7 +13,7 @@ ARG VITE_USSD_DASHBOARD_URL
 
 WORKDIR /app
 
-COPY package.json yarn.lock .yarnrc.yml vite.config.ts tsconfig.json tsconfig.node.json index.html tailwind.config.ts postcss.config.js ./
+COPY package.json yarn.lock .yarnrc.yml vite.config.ts tsconfig.json tsconfig.node.json index.html ./
 COPY .yarn/releases/ ./.yarn/releases/
 COPY src/ ./src/
 COPY public/ ./public/
